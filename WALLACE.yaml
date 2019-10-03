@@ -72,4 +72,4 @@ projects:
 #  - project: KCU54R01
 #    yamlprocessors: macruise_v3_2_0_KCU54R01,surf_postproc_v1_1_0_KCU54R01,surf_quant_v1_1_0_KCU54R01,curve_extract_v1_1_0_KCU54R01,surf_quant_stat_v1_1_0_KCU54R01,magm_normalize_v3_0_0_KCU54R01
   - project: KCU54R01
-    yamlprocessors: multi_atlas_v2_1_0_KCU54R01,macruise_v3_2_0_KCU54R01
+    yamlprocessors: multi_atlas_v2_1_0_KCU54R01,macruise_v3_2_0_KCU54R01,magm_normalize_v3_0_0_KCU54R01
