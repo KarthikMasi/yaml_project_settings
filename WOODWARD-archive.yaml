@@ -1,0 +1,30 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 200
+  job_email: justin.blaber@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+# CAMNCAN
+  - name: slant_v1_0_0_CAMCAN
+    filepath: slant_v1.0.0_processor.yaml
+  - name: macruise_v3_2_0_CAMCAN
+    filepath: macruise_v3.2.0_processor.yaml
+  - name: surf_postproc_v1_1_0_CAMCAN
+    filepath: surf_postproc_v1.1.0_processor.yaml
+  - name: surf_quant_v1_1_0_CAMCAN
+    filepath: surf_quant_v1.1.0_processor.yaml
+  - name: curve_extract_v1_1_0_CAMCAN
+    filepath: curve_extract_v1.1.0_processor.yaml
+  - name: surf_quant_stat_v1_1_0_CAMCAN
+    filepath: surf_quant_stat_v1.1.0_processor.yaml
+
+projects:
+# CAMCAN
+  - project: CAMCAN
+    yamlprocessors: slant_v1_0_0_CAMCAN

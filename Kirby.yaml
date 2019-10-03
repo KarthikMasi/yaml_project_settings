@@ -1,0 +1,30 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 500
+  job_email: ilwoo.lyu@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+# Kirby21
+  - name: surf_postproc_v1_2_0_Kirby21
+    filepath: surf_postproc_fs_legacy_v1.2.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: MPRAGE
+  - name: FS6_v1_2_0_Kirby21
+    filepath: FS6_v1.2.0_processor.yaml
+  - name: surf_quant_v1_1_0_Kirby21
+    filepath: surf_quant_v1.1.0_processor.yaml
+  - name: curve_extract_v1_1_0_Kirby21
+    filepath: curve_extract_v1.1.0_processor.yaml
+  - name: surf_quant_stat_v1_1_0_Kirby21
+    filepath: surf_quant_stat_v1.1.0_processor.yaml
+
+projects:
+# Kirby21
+  - project: Kirby21
+    yamlprocessors: surf_postproc_v1_2_0_Kirby21

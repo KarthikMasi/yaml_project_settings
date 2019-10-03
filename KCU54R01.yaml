@@ -1,0 +1,35 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 400
+  job_email: justin.blaber@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+# MP2RAGE
+  - name: mp2rage_v2_0_0_MP2RAGE
+    filepath: mp2rage_v2.0.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_mp2rage.types: 'WIP MP2RAGE*,*MP2RAGE*'
+  - name: slant_v1_0_0_MP2RAGE
+    filepath: slant_mp2rage.yaml
+  - name: freesurfer_dev_v2_0_0_MP2RAGE
+    filepath: freesurfer_dev_v2_0_0_mp2rage.yaml
+  - name: magm-normalize_v3_0_0_KCU54R01
+    filepath: magm-normalize_v3.0.0.yaml
+modules:
+# PSYXSEC
+  - name: dcm2niix_MP2RAGE
+    filepath: Module_dcm2niix.py
+    arguments:
+      dcm2niixpath: /data/mcr/centos7/dcm2niix/16_JULY_2019/console/dcm2niix
+
+projects:
+# KCU54R01
+  - project: KCU54R01 
+    yamlprocessors: mp2rage_v2_0_0_MP2RAGE,slant_v1_0_0_MP2RAGE,freesurfer_dev_v2_0_0_MP2RAGE,magm-normalize_v3_0_0_KCU54R01
+    modules: dcm2niix_MP2RAGE

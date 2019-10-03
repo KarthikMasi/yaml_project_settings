@@ -1,0 +1,66 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 200
+  job_email: justin.blaber@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+# HeckersFEPH3T
+  - name: fmri_conncalc_SZhab_v1_0_0_HeckersFEPH3T
+    filepath: fmri_conncalc_SZhab_v1.0.0_processor.yaml
+  - name: FS6_v1_0_0_HeckersFEPH3T
+    filepath: FS6_v1.2.0_processor.yaml
+  - name: dtiQA_v6_0_0_HeckersFEPH3T
+    filepath: dtiQA_v6.0.0_processor.yaml
+  - name: tracula_v2_0_0_HeckersFEPH3T
+    filepath: tracula_v2.0.0_processor.yaml
+  - name: conncalc_jsins_v1_0_1_HeckersFEPH3T
+    filepath: conncalc_jsins_v1.0.1.yaml
+  - name: modularity_3study_v1_0_0_HeckersFEPH3T
+    filepath: modularity_3study_v1.0.0.yaml
+  - name: freesurfer_dev_v1_0_0_HeckersFEPH3T
+    filepath: freesurfer_dev_v1.0.0.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1
+# HeckersPGPP
+  - name: FS6_v1_2_0_HeckersPGPP
+    filepath: FS6_v1.2.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1W/3D/TFE/new SENSE,T1W/3D/TFE/new
+  - name: surf_postproc_fs_v1_1_0_HeckersPGPP
+    filepath: surf_postproc_fs_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1W/3D/TFE/new SENSE,T1W/3D/TFE/new
+  - name: surf_quant_v1_1_0_HeckersPGPP
+    filepath: surf_quant_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1W/3D/TFE/new SENSE,T1W/3D/TFE/new
+  - name: curve_extract_v1_1_0_HeckersPGPP
+    filepath: curve_extract_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1W/3D/TFE/new SENSE,T1W/3D/TFE/new
+  - name: surf_quant_stat_v1_1_0_HeckersPGPP
+    filepath: surf_quant_stat_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1W/3D/TFE/new SENSE,T1W/3D/TFE/new
+  - name: surf_postproc_cruise_v1_1_0_HeckersPGPP
+    filepath: surf_postproc_legacy_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1W/3D/TFE/new SENSE,T1W/3D/TFE/new
+
+
+projects:
+# HeckersPGPP
+  - project: HeckersPGPP
+    #yamlprocessors: surf_postproc_cruise_v1_1_0_HeckersPGPP
+    #yamlprocessors: surf_quant_v1_1_0_HeckersPGPP,curve_extract_v1_1_0_HeckersPGPP
+    yamlprocessors: surf_quant_stat_v1_1_0_HeckersPGPP
+     
+# HeckersFEPH3T
+  - project: HeckersFEPH3T
+    yamlprocessors: fmri_conncalc_SZhab_v1_0_0_HeckersFEPH3T,FS6_v1_0_0_HeckersFEPH3T,dtiQA_v6_0_0_HeckersFEPH3T,tracula_v2_0_0_HeckersFEPH3T,conncalc_jsins_v1_0_1_HeckersFEPH3T,modularity_3study_v1_0_0_HeckersFEPH3T,freesurfer_dev_v1_0_0_HeckersFEPH3T

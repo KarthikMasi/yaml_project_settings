@@ -1,0 +1,38 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 400
+  job_email: ilwoo.lyu@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+# Claassen_Crave
+  - name: multi_atlas_v2_1_0_Claassen_Crave
+    filepath: Multi_Atlas_v2.1.0_processor.yaml
+  - name: macruise_classern_v3_2_0_Claassen_Crave
+    filepath: macruise_classern_v3.2.0_processor.yaml
+  - name: surf_postproc_v1_1_0_Claassen_Crave
+    filepath: surf_postproc_claassen_v1.1.0_processor.yaml
+  - name: surf_quant_v1_1_0_Claassen_Crave
+    filepath: surf_quant_v1.1.0_processor.yaml
+  - name: curve_extract_v1_1_0_Claassen_Crave
+    filepath: curve_extract_v1.1.0_processor.yaml
+  - name: surf_quant_stat_v1_1_0_Claassen_Crave
+    filepath: surf_quant_stat_v1.1.0_processor.yaml
+  - name: cerebellum_v1_0_0_Claassen_Crave
+    filepath: cerebellum_v1.0.0_processor.yaml
+
+projects:
+# Claassen_Crave
+  - project: Claassen_Crave
+    #yamlprocessors: macruise_classern_v3_2_0_Claassen_Crave
+    #yamlprocessors: surf_postproc_v1_1_0_Claassen_Crave
+    #yamlprocessors: surf_quant_v1_1_0_Claassen_Crave
+    #yamlprocessors: curve_extract_v1_1_0_Claassen_Crave
+    #yamlprocessors: curve_extract_v1_1_0_Claassen_Crave,surf_quant_v1_1_0_Claassen_Crave
+    yamlprocessors: cerebellum_v1_0_0_Claassen_Crave
+    #yamlprocessors: multi_atlas_v2_1_0_Claassen_Crave,macruise_classern_v3_2_0_Claassen_Crave,surf_postproc_v1_1_0_Claassen_Crave,surf_quant_v1_1_0_Claassen_Crave,curve_extract_v1_1_0_Claassen_Crave,surf_quant_stat_v1_1_0_Claassen_Crave

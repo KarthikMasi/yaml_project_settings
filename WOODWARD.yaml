@@ -1,0 +1,28 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 400
+  job_email: justin.blaber@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+# WOODWARD_TCP
+  - name: conncalc_jsins_v1_0_1_WOODWARD_TCP
+    filepath: conncalc_jsins_v1.0.1.yaml
+  - name: ndw_wm_edat_v3_0_0_WOODWARD_TCP
+    filepath: ndw_wm_edat_v3.0.0.yaml
+  - name: gsbss_v3_1_0_WOODWARD_TCP
+    filepath: gsbss_v3.1.0_processor.yaml
+  - name: modularity_3study_v1_0_0_WOODWARD_TCP
+    filepath: modularity_3study_v1.0.0.yaml
+  - name: freesurfer_dev_v1_0_0_WOODWARD_TCP
+    filepath: freesurfer_dev_v1.0.0.yaml
+
+projects:
+# WOODWARD_TCP
+  - project: WOODWARD_TCP
+    yamlprocessors: conncalc_jsins_v1_0_1_WOODWARD_TCP,ndw_wm_edat_v3_0_0_WOODWARD_TCP,modularity_3study_v1_0_0_WOODWARD_TCP,freesurfer_dev_v1_0_0_WOODWARD_TCP,gsbss_v3_1_0_WOODWARD_TCP

@@ -1,0 +1,31 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 400
+  job_email: justin.blaber@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+modules:
+  - name: dcm2niix_MORGAN
+    filepath: Module_dcm2niix.py
+    arguments:
+      dcm2niixpath: /data/mcr/centos7/dcm2niix/10_APR_2019/console/dcm2niix
+
+yamlprocessors:
+  - name: freesurfer_dev_v2_0_0_MORGAN
+    filepath: freesurfer_dev_v2.0.0.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: AnatBrain_T1W3D,AnatBrain_T1W3D_CS3
+  - name: dtiQA_v6_0_0_MORGAN
+    filepath: dtiQA_v6.0.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_dti.types: HARDI_2.5_iso,DTI_HARD_2.5_iso
+
+projects:
+  - project: MORGAN
+    yamlprocessors: freesurfer_dev_v2_0_0_MORGAN, dtiQA_v6_0_0_MORGAN
+    modules: dcm2niix_MORGAN

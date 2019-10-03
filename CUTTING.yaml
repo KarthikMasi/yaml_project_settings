@@ -1,0 +1,51 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 450
+  job_email: ilwoo.lyu@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+# CUTTING
+  - name: surf_postproc_fs_v1_1_0_CUTTING
+    filepath: surf_postproc_fs_v1.1.0_processor.yaml
+  - name: surf_postproc_cruise_v1_1_0_CUTTING
+    filepath: surf_postproc_legacy_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: t1_improved3d
+      inputs.xnat.assessors.assr_macruise.proctypes: MaCRUISE_v3
+  - name: FS6_v1_2_0_CUTTING
+    filepath: FS6_v1.2.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: t1_improved3d
+  - name: multi_atlas_v2_1_0_CUTTING
+    filepath: Multi_Atlas_v2.1.0_processor.yaml
+  - name: slant_v1_0_0_CUTTING
+    filepath: slant_v1.0.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: t1_improved3d
+  - name: surf_quant_v1_1_0_CUTTING
+    filepath: surf_quant_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: t1_improved3d
+  - name: curve_extract_v1_1_0_CUTTING
+    filepath: curve_extract_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: t1_improved3d
+  - name: surf_quant_stat_v1_1_0_CUTTING
+    filepath: surf_quant_stat_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: t1_improved3d
+projects:
+# CUTTING
+  - project: CUTTING
+    yamlprocessors: FS6_v1_2_0_CUTTING
+#    yamlprocessors: surf_quant_stat_v1_1_0_CUTTING
+#    yamlprocessors: surf_postproc_cruise_v1_1_0_CUTTING
+#    yamlprocessors: surf_quant_v1_1_0_CUTTING,curve_extract_v1_1_0_CUTTING,surf_quant_stat_v1_1_0_CUTTING
+#    yamlprocessors: surf_quant_v1_1_0_CUTTING,curve_extract_v1_1_0_CUTTING
+#    yamlprocessors: curve_extract_v1_1_0_CUTTING

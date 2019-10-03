@@ -1,0 +1,20 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 400
+  job_email: justin.blaber@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+# nirs_60581
+  - name: nirsqa_v3_0_0_nirs_60581
+    filepath: nirsqa_v3.0.0.yaml
+
+projects:
+# nirs_60581
+  - project: nirs_60581
+    yamlprocessors: nirsqa_v3_0_0_nirs_60581

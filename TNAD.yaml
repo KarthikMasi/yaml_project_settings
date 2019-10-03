@@ -1,0 +1,22 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 400
+  job_email: justin.blaber@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+# TNAD
+  - name: freesurfer_dev_v1_0_0_TNAD
+    filepath: freesurfer_dev_v1.0.0.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1W/3D/TFE
+
+projects:
+# TNAD
+  - project: TNAD
+    yamlprocessors: freesurfer_dev_v1_0_0_TNAD

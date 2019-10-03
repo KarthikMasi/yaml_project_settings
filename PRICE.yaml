@@ -1,0 +1,44 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 400
+  job_email: justin.blaber@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+modules:
+# PRICE_NSF
+  - name: d2n
+    filepath: Module_dcm2niix.py
+    arguments:
+      dcm2niixpath: /data/mcr/centos7/dcm2niix/18_SEPT_2018/console/dcm2niix
+
+yamlprocessors:
+# PRICE_NSF
+  - name: dtiqa
+    filepath: dtiQA_v6.0.0_processor.yaml
+  - name: ma
+    filepath: Multi_Atlas_v2.1.0_processor.yaml
+  - name: bedpost
+    filepath: bedpostx_v3.0.0_processor.yaml
+  - name: fs6
+    filepath: FS6_v1.2.3_processor.yaml
+    arguments:
+       inputs.default.extraflags: '\-3T'
+  - name: tracula
+    filepath: TRACULA_v2.0.0_processor.yaml
+  - name: fmriqa
+    filepath: FMRIQA_v4.0.0_processor.yaml
+
+projects:
+# PRICE_NSF
+  - project: PRICE_NSF
+    modules: d2n
+    yamlprocessors: fmriqa,bedpost,fs6,ma,dtiqa
+  - project: PRICE_NFA
+    modules: d2n
+    yamlprocessors: tracula,fs6,dtiqa,ma,bedpost
+

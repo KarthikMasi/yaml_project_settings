@@ -1,0 +1,70 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 500
+  job_email: ilwoo.lyu@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+# CAMNCAN
+  - name: slant_v1_0_0_CAMCAN
+    filepath: slant_v1.0.0_processor.yaml
+  - name: macruise_v3_2_0_CAMCAN
+    filepath: macruise_v3.2.0_processor.yaml
+  - name: surf_postproc_v1_1_0_CAMCAN
+    filepath: surf_postproc_v1.1.0_processor.yaml
+  - name: surf_quant_v1_1_0_CAMCAN
+    filepath: surf_quant_v1.1.0_processor.yaml
+  - name: curve_extract_v1_1_0_CAMCAN
+    filepath: curve_extract_v1.1.0_processor.yaml
+  - name: surf_quant_stat_v1_1_0_CAMCAN
+    filepath: surf_quant_stat_v1.1.0_processor.yaml
+
+# PNC_V3
+  - name: slant_v1_0_0_PNC_V3
+    filepath: slant_v1.0.0_processor.yaml
+  - name: macruise_v3_2_0_PNC_V3
+    filepath: macruise_v3.2.0_processor.yaml
+  - name: surf_postproc_v1_1_0_PNC_V3
+    filepath: surf_postproc_v1.1.0_processor.yaml
+  - name: surf_quant_v1_1_0_PNC_V3
+    filepath: surf_quant_v1.1.0_processor.yaml
+  - name: curve_extract_v1_1_0_PNC_V3
+    filepath: curve_extract_v1.1.0_processor.yaml
+  - name: surf_quant_stat_v1_1_0_PNC_V3
+    filepath: surf_quant_stat_v1.1.0_processor.yaml
+  - name: cat12_ndw_v1_2_1_PNC_V3
+    filepath: cat12_ndw_v1.2.1.yaml
+
+# NDW_ROCKLAND
+  - name: slant_v1_0_0_NDW_ROCKLAND
+    filepath: slant_v1.0.0_processor.yaml
+  - name: macruise_v3_2_0_NDW_ROCKLAND
+    filepath: macruise_v3.2.0_processor.yaml
+  - name: surf_postproc_v1_1_0_NDW_ROCKLAND
+    filepath: surf_postproc_v1.1.0_processor.yaml
+  - name: surf_quant_v1_1_0_NDW_ROCKLAND
+    filepath: surf_quant_v1.1.0_processor.yaml
+  - name: curve_extract_v1_1_0_NDW_ROCKLAND
+    filepath: curve_extract_v1.1.0_processor.yaml
+  - name: surf_quant_stat_v1_1_0_NDW_ROCKLAND
+    filepath: surf_quant_stat_v1.1.0_processor.yaml
+  - name: cat12_ndw_v2_0_0_NDW_ROCKLAND
+    filepath: cat12_ndw_v2.0.0.yaml
+
+projects:
+# CAMCAN
+#  - project: CAMCAN
+#    yamlprocessors: slant_v1_0_0_CAMCAN
+
+# PNC_V3
+  - project: PNC_V3
+    yamlprocessors: surf_postproc_v1_1_0_PNC_V3,surf_quant_v1_1_0_PNC_V3,curve_extract_v1_1_0_PNC_V3,cat12_ndw_v1_2_1_PNC_V3
+
+# NDW_ROCKLAND
+  - project: NDW_ROCKLAND
+    yamlprocessors: cat12_ndw_v2_0_0_NDW_ROCKLAND

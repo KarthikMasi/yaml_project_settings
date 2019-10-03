@@ -1,0 +1,28 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 400
+  job_email: ilwoo.lyu@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+# REX_TBI_VUMC
+  - name: surf_postproc_v1_1_0_REX_TBI_VUMC
+    filepath: surf_postproc_legacy_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.assessors.assr_macruise.proctypes: MaCRUISE_v3
+  - name: surf_quant_v1_1_0_REX_TBI_VUMC
+    filepath: surf_quant_v1.1.0_processor.yaml
+  - name: curve_extract_v1_1_0_REX_TBI_VUMC
+    filepath: curve_extract_v1.1.0_processor.yaml
+  - name: surf_quant_stat_v1_1_0_REX_TBI_VUMC
+    filepath: surf_quant_stat_v1.1.0_processor.yaml
+
+projects:
+# REX_TBI_VUMC
+  - project: REX_TBI_VUMC
+    yamlprocessors: surf_postproc_v1_1_0_REX_TBI_VUMC,surf_quant_v1_1_0_REX_TBI_VUMC,curve_extract_v1_1_0_REX_TBI_VUMC,surf_quant_stat_v1_1_0_REX_TBI_VUMC

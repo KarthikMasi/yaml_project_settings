@@ -1,0 +1,56 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 400
+  job_email: ilwoo.lyu@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+# CASCIO_CM
+  - name: surf_postproc_fs_v1_1_0_CASCIO_CM
+    filepath: surf_postproc_fs_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1W/3D/TFE,Improved 3D,T1W,Improved 3D SENSE
+  - name: FS6_v1_2_0_CASCIO_CM
+    filepath: FS6_v1.2.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1W/3D/TFE,Improved 3D,T1W,Improved 3D SENSE
+  - name: multi_atlas_v2_1_0_CASCIO_CM
+    filepath: Multi_Atlas_v2.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1W/3D/TFE,Improved 3D,T1W,Improved 3D SENSE
+  - name: surf_quant_v1_1_0_CASCIO_CM
+    filepath: surf_quant_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1W/3D/TFE,Improved 3D,T1W,Improved 3D SENSE
+  - name: curve_extract_v1_1_0_CASCIO_CM
+    filepath: curve_extract_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1W/3D/TFE,Improved 3D,T1W,Improved 3D SENSE
+  - name: surf_quant_stat_v1_1_0_CASCIO_CM
+    filepath: surf_quant_stat_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1W/3D/TFE,Improved 3D,T1W,Improved 3D SENSE
+  - name: macruise_multiatlas_v3_2_0_CASCIO_CM
+    filepath: macruise_multiatlas_v3.2.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1W/3D/TFE,Improved 3D,T1W,Improved 3D SENSE
+  - name: surf_postproc_cruise_v1_1_0_CASCIO_CM
+    filepath: surf_postproc_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1W/3D/TFE,Improved 3D,T1W,Improved 3D SENSE
+
+projects:
+# CASCIO_CM
+  - project: CASCIO_CM
+#    yamlprocessors: multi_atlas_v2_1_0_CASCIO_CM
+    yamlprocessors: surf_quant_stat_v1_1_0_CASCIO_CM
+#    yamlprocessors: macruise_multiatlas_v3_2_0_CASCIO_CM
+#    yamlprocessors: surf_postproc_cruise_v1_1_0_CASCIO_CM
+#    yamlprocessors: surf_quant_v1_1_0_CASCIO_CM,curve_extract_v1_1_0_CASCIO_CM
+#    yamlprocessors: FS6_v1_2_0_CASCIO_CM,multi_atlas_v2_1_0_CASCIO_CM,macruise_multiatlas_v3_2_0_CASCIO_CM,surf_postproc_cruise_v1_1_0_CASCIO_CM,surf_quant_v1_1_0_CASCIO_CM,curve_extract_v1_1_0_CASCIO_CM,surf_quant_stat_v1_1_0_CASCIO_CM
+#    yamlprocessors: FS6_v1_2_0_CASCIO_CM,multi_atlas_v2_1_0_CASCIO_CM,surf_postproc_fs_v1_1_0_CASCIO_CM,surf_quant_v1_1_0_CASCIO_CM,curve_extract_v1_1_0_CASCIO_CM,surf_quant_stat_v1_1_0_CASCIO_CM

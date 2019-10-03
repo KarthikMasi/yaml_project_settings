@@ -1,0 +1,29 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 400
+  job_email: justin.blaber@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+# BLSA
+  - name: dti_coreg_v1_0_0_BLSA
+    filepath: dti_coreg-master-v1.0.0_processor.yaml
+    arguments:
+      inputs.xnat.assessors.assr_macruise.proctypes: macruise_v3
+      inputs.xnat.scans.scan_t1.types: MPRAGE
+  - name: gsbss_gen_v3_0_0_BLSA
+    filepath: gsbss_gen_v3.0.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: MPRAGE
+      inputs.xnat.assessors.assr_macruise.proctypes: macruise_v3
+      inputs.xnat.assessors.assr_amico.proctypes: DTI_COREG_vdti_coreg-master-v1
+
+projects:
+# BLSA
+  - project: BLSA
+    yamlprocessors: dti_coreg_v1_0_0_BLSA,gsbss_gen_v3_0_0_BLSA

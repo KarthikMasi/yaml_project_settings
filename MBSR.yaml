@@ -1,0 +1,66 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 400
+  job_email: justin.blaber@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+# MBSR-2010
+  - name: multi_atlas_v2_1_0_MBSR-2010
+    filepath: Multi_Atlas_v2.1.0_processor.yaml
+  - name: slant_v1_0_0_MBSR-2010
+    filepath: slant_v1.0.0_processor.yaml
+  - name: surf_postproc_v1_1_0_MBSR-2010
+    filepath: surf_postproc_legacy_v1.1.0_processor.yaml
+  - name: surf_quant_v1_1_0_MBSR-2010
+    filepath: surf_quant_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: MPRAGE
+
+  - name: curve_extract_v1_1_0_MBSR-2010
+    filepath: curve_extract_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: MPRAGE
+
+  - name: surf_quant_stat_v1_1_0_MBSR-2010
+    filepath: surf_quant_stat_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: MPRAGE
+
+# MBSR-2018
+  - name: multi_atlas_v2_1_0_MBSR-2018
+    filepath: Multi_Atlas_v2.1.0_processor.yaml
+  - name: slant_v1_0_0_MBSR-2018
+    filepath: slant_v1.0.0_processor.yaml
+  - name: surf_postproc_v1_1_0_MBSR-2018
+    filepath: surf_postproc_legacy_v1.1.0_processor.yaml
+  - name: surf_quant_v1_1_0_MBSR-2018
+    filepath: surf_quant_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: MPRAGE
+
+  - name: curve_extract_v1_1_0_MBSR-2018
+    filepath: curve_extract_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: MPRAGE
+
+  - name: surf_quant_stat_v1_1_0_MBSR-2018
+    filepath: surf_quant_stat_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: MPRAGE
+
+projects:
+# MBSR-2010
+  - project: MBSR-2010
+    yamlprocessors: surf_postproc_v1_1_0_MBSR-2010,surf_quant_v1_1_0_MBSR-2010,curve_extract_v1_1_0_MBSR-2010,surf_quant_stat_v1_1_0_MBSR-2010
+    #yamlprocessors: multi_atlas_v2_1_0_MBSR-2010,slant_v1_0_0_MBSR-2010,surf_postproc_v1_1_0_MBSR-2010
+
+# MBSR-2018
+  - project: MBSR-2018
+    yamlprocessors: surf_postproc_v1_1_0_MBSR-2018,surf_quant_v1_1_0_MBSR-2018,curve_extract_v1_1_0_MBSR-2018,surf_quant_stat_v1_1_0_MBSR-2018
+    #yamlprocessors: multi_atlas_v2_1_0_MBSR-2018,slant_v1_0_0_MBSR-2018,surf_postproc_v1_1_0_MBSR-2018

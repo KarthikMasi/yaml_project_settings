@@ -1,0 +1,62 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 200
+  job_email: justin.blaber@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+
+# PNC_V3
+  - name: slant_v1_0_0_PNC_V3
+    filepath: slant_v1.0.0_processor.yaml
+  - name: macruise_v3_2_0_PNC_V3
+    filepath: macruise_v3.2.0_processor.yaml
+    arguments:
+      attrs.walltime: "120:00:00"
+  - name: surf_postproc_v1_1_0_PNC_V3
+    filepath: surf_postproc_v1.1.0_processor.yaml
+  - name: surf_quant_v1_1_0_PNC_V3
+    filepath: surf_quant_v1.1.0_processor.yaml
+    arguments:
+      attrs.walltime: "60:00:00"
+  - name: curve_extract_v1_1_0_PNC_V3
+    filepath: curve_extract_v1.1.0_processor.yaml
+  - name: surf_quant_stat_v1_1_0_PNC_V3
+    filepath: surf_quant_stat_v1.1.0_processor.yaml
+  - name: cat12_ndw_v1_2_1_PNC_V3
+    filepath: cat12_ndw_v1.2.1.yaml
+  - name: freesurfer_dev_v2_0_0_PNC_V3
+    filepath: freesurfer_dev_v2.0.0.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1_3DAXIAL
+  - name: FMRIQA_v4_2_0_PNC_V3
+    filepath: fmriqa_v4.2.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_fmri.types: FMRI_BOLD_rest
+      inputs.xnat.scans.scan_t1.types: T1_3DAXIAL
+      inputs.xnat.assessors.assr_ma.proctypes: slant_v1
+  - name: CONNPREP_v2_1_0_PNC_V3
+    filepath: connprep_v2.1.0_processor.yaml
+  - name: fsthalconn_v2_0_3_PNC_V3
+    filepath: fsthalconn_v2.0.3_processor.yaml
+  - name: fsthalconnMNI_PNC_V3
+    filepath: fsthalconnMNI_v1.0.0_processor_DIRJ_test.yaml 
+
+projects:
+
+# PNC_V3
+  - project: PNC_V3
+    yamlprocessors: fsthalconn_v2_0_3_PNC_V3,freesurfer_dev_v2_0_0_PNC_V3,FMRIQA_v4_2_0_PNC_V3,CONNPREP_v2_1_0_PNC_V3,fsthalconnMNI_PNC_V3
+#    yamlprocessors: slant_v1_0_0_PNC_V3
+#    yamlprocessors: surf_postproc_v1_1_0_PNC_V3
+#    yamlprocessors: surf_quant_v1_1_0_PNC_V3,cat12_ndw_v1_2_1_PNC_V3
+#    yamlprocessors: surf_quant_v1_1_0_PNC_V3,curve_extract_v1_1_0_PNC_V3
+#    yamlprocessors: curve_extract_v1_1_0_PNC_V3
+#    yamlprocessors: surf_quant_v1_1_0_PNC_V3
+#    yamlprocessors: surf_postproc_v1_1_0_PNC_V3,surf_quant_v1_1_0_PNC_V3,curve_extract_v1_1_0_PNC_V3,cat12_ndw_v1_2_1_PNC_V3
+

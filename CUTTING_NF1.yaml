@@ -1,0 +1,54 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 450
+  job_email: karthik.ramadass@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+modules:
+#CUTTING_NF1
+  - name: parrec2niix_CUTTING_NF1
+    filepath: Module_parrec2niix_cutting_nf1.py
+    arguments:
+      dcm2niixpath: /data/mcr/dcm2niix_15Jul2019/console/dcm2niix
+
+yamlprocessors:
+#CUTTING_NF1
+  - name: slant_v1_0_0_CUTTING_NF1
+    filepath: slant_v1.0.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1_structural
+  - name: FS6_v1_2_3_CUTTING_NF1
+    filepath: FS6_v1.2.3_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1_structural
+  - name: dtiQA_v6_0_0_CUTTING_NF1
+    filepath: dtiQA_v6.0.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_dti.types: diff*,*DTI* 
+  - name: surf_postproc_v1_2_0_CUTTING_NF1
+    filepath: surf_postproc_fs_v1.2.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1_structural
+  - name: surf_quant_v1_1_0_CUTTING_NF1
+    filepath: surf_quant_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1_structural
+  - name: curve_extract_v1_1_0_CUTTING_NF1
+    filepath: curve_extract_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1_structural
+  - name: surf_quant_stat_v1_1_0_CUTTING_NF1
+    filepath: surf_quant_stat_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1_structural
+
+projects:
+#CUTTING_NF1
+  - project: CUTTING_NF1
+    yamlprocessors: slant_v1_0_0_CUTTING_NF1,FS6_v1_2_3_CUTTING_NF1,dtiQA_v6_0_0_CUTTING_NF1,surf_postproc_v1_2_0_CUTTING_NF1,surf_quant_v1_1_0_CUTTING_NF1,curve_extract_v1_1_0_CUTTING_NF1,surf_quant_stat_v1_1_0_CUTTING_NF1
+    modules: parrec2niix_CUTTING_NF1

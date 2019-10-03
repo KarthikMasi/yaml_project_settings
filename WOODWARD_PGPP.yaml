@@ -1,0 +1,26 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 400
+  job_email: justin.blaber@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+# WoodwardPGPP
+  - name: conncalc_jsins_v1_0_1_WoodwardPGPP
+    filepath: conncalc_jsins_v1.0.1.yaml
+  - name: modularity_3study_v1_0_0_WoodwardPGPP
+    filepath: modularity_3study_v1.0.0.yaml
+  - name: freesurfer_dev_v1_0_0_WoodwardPGPP
+    filepath: freesurfer_dev_v1.0.0.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1W/3D/TFE/new
+
+projects:
+# WoodwardPGPP
+  - project: WoodwardPGPP
+    yamlprocessors: conncalc_jsins_v1_0_1_WoodwardPGPP,modularity_3study_v1_0_0_WoodwardPGPP,freesurfer_dev_v1_0_0_WoodwardPGPP

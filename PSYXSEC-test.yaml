@@ -1,0 +1,31 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 400
+  job_email: justin.blaber@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+modules:
+# PSYXSEC
+  - name: parrec2niix_PSYXSEC
+    filepath: Module_parrec2niix.py
+    arguments:
+      dcm2niixpath: /data/mcr/dcm2niix_15Jul2019/console/dcm2niix
+  - name: dcm2niix_PSYXSEC
+    filepath: Module_dcm2niix.py
+    arguments:
+      dcm2niixpath: /data/mcr/dcm2niix_15Jul2019/console/dcm2niix
+
+yamlprocessors:
+  - name: cat12_ss2p0_v2_0_0_PSYXSEC
+    filepath: cat12_ss2p0_v2.0.0.yaml
+
+projects:
+# PSYXSEC
+  - project: PSYXSEC
+    yamlprocessors: cat12_ss2p0_v2_0_0_PSYXSEC
+    modules: parrec2niix_PSYXSEC,dcm2niix_PSYXSEC

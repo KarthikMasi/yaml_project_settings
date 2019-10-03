@@ -1,0 +1,23 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 200
+  job_email: camilo.bermudez@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+# slant_contrast
+  - name: freesurfer_dev_v2_0_0_slant_contrast
+    filepath: freesurfer_dev_v2.0.0.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1
+
+projects:
+# slant_contrast
+  - project: slant_contrast
+    yamlprocessors: freesurfer_dev_v2_0_0_slant_contrast
+   

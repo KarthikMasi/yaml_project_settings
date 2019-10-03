@@ -1,0 +1,49 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 400
+  job_email: justin.blaber@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+modules:
+# Booth_DTI_read
+  - name: dcm2niix_Booth_DTI_read
+    filepath: Module_dcm2niix.py
+    arguments:
+      dcm2niixpath: /data/mcr/centos7/dcm2niix/18_SEPT_2018/console/dcm2niix
+
+# Booth_Zoedata
+  - name: dcm2niix_Booth_Zoedata
+    filepath: Module_dcm2niix.py
+    arguments:
+      dcm2niixpath: /data/mcr/centos7/dcm2niix/18_SEPT_2018/console/dcm2niix
+
+yamlprocessors:
+# Booth_DTI_read
+  - name: dtiQA_v6_0_0_Booth_DTI_read
+    filepath: dtiQA_v6.0.0_processor.yaml
+  - name: dtiQA_with_eddy_v6_0_0_Booth_DTI_read
+    filepath: dtiQA_with_eddy_v6.0.0_processor.yaml
+
+# Booth_Zoedata
+  - name: dtiQA_v6_0_0_Booth_Zoedata
+    filepath: dtiQA_v6.0.0_processor.yaml
+  - name: dtiQA_with_eddy_v6_0_0_Booth_Zoedata
+    filepath: dtiQA_with_eddy_v6.0.0_processor.yaml
+  - name: bedpostx_v3_0_0_Booth_Zoedata
+    filepath: bedpostx_v3.0.0_processor.yaml
+
+projects:
+# Booth_Zoedata
+  - project: Booth_Zoedata
+    modules: dcm2niix_Booth_Zoedata
+    yamlprocessors: dtiQA_v6_0_0_Booth_Zoedata,dtiQA_with_eddy_v6_0_0_Booth_Zoedata,bedpostx_v3_0_0_Booth_Zoedata
+
+# Booth_DTI_read
+  - project: Booth_DTI_read
+    modules: dcm2niix_Booth_DTI_read
+    yamlprocessors: dtiQA_v6_0_0_Booth_DTI_read,dtiQA_with_eddy_v6_0_0_Booth_DTI_read

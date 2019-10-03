@@ -1,0 +1,24 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 500
+  job_email: ilwoo.lyu@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+# PNC_V3:
+  - name: FMRIQA_v4_2_0_PNC_V3
+    filepath: fmriqa_v4.2.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_fmri.types: FMRI_BOLD_rest
+      inputs.xnat.scans.scan_t1.types: T1_3DAXIAL
+      inputs.xnat.assessors.assr_ma.proctypes: slant_v1
+
+projects:
+# PNC_V3
+  - project: PNC_V3
+    yamlprocessors: FMRIQA_v4_2_0_PNC_V3

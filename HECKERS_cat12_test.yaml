@@ -1,0 +1,22 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 200
+  job_email: karthik.ramadass@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+# HeckersFEPH3T
+  - name: cat12_ss2p0_v2_0_0_HECKERS_FEPH3T
+    filepath: cat12_ss2p0_v2.0.0.yaml
+    arguments:
+      inputs.xnat.scans.t1scan.types: T1*
+projects:
+# HeckersPGPP
+  - project: HeckersFEPH3T
+    yamlprocessors: cat12_ss2p0_v2_0_0_HECKERS_FEPH3T
+     

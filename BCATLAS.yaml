@@ -1,0 +1,20 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 400
+  job_email: ilwoo.lyu@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+# CASCIO_CM
+  - name: FS6_v1_2_0_BC_atlas
+    filepath: FS6_v1.2.0_processor.yaml
+
+projects:
+# CASCIO_CM
+  - project: BC_atlas 
+    yamlprocessors: FS6_v1_2_0_BC_atlas

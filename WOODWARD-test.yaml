@@ -1,0 +1,23 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 400
+  job_email: ilwoo.lyu@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+# NDW_ROCKLAND
+  - name: slant_v1_0_0_NDW_ROCKLAND
+    filepath: slant_cpu_v1.0.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: MPRAGE_SIEMENS_DEFACED
+      jobtemplate: job_template.txt
+
+projects:
+# NDW_ROCKLAND 
+  - project: NDW_ROCKLAND 
+    yamlprocessors: slant_v1_0_0_NDW_ROCKLAND

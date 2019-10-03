@@ -1,0 +1,25 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 400
+  job_email: karthik.ramadass@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+modules:
+#SMITH_MS3T
+  - name: dcm2niix_bids_SMITH_MS3T
+    filepath: Module_dcm2niix_bids.py
+    arguments:
+      dcm2niixpath: /data/mcr/dcm2niix_15Jul2019/console/dcm2niix
+  - name: dcm2niix_SMITH_MS3T
+    filepath: Module_dcm2niix.py
+    arguments:
+      dcm2niixpath: /data/mcr/dcm2niix_15Jul2019/console/dcm2niix
+projects:
+#SMITH_MS3T
+  - project: SMITH_MS3T
+    modules: dcm2niix_bids_SMITH_MS3T

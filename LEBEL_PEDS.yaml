@@ -1,0 +1,22 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 800
+  job_email: justin.blaber@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+# LEBEL_PEDS
+  - name: slant_v1_0_0_LEBEL_PEDS
+    filepath: slant_v1.0.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.t1scan.types: T1
+
+projects:
+# LEBEL_PEDS
+  - project: Lebel_Peds
+    yamlprocessors: slant_v1_0_0_LEBEL_PEDS
