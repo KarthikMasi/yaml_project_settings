@@ -19,6 +19,8 @@ yamlprocessors:
     filepath: slant_mp2rage.yaml
   - name: freesurfer_dev_v2_0_0_MP2RAGE
     filepath: freesurfer_dev_v2_0_0_mp2rage.yaml
+    arguments:
+      attrs.walltime: "72:00:00"
 
 modules:
 # PSYXSEC
