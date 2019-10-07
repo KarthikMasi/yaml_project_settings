@@ -14,6 +14,8 @@ yamlprocessors:
 # NDW_ROCKLAND
   - name: slant_v1_0_0_NDW_ROCKLAND
     filepath: slant_v1.0.0_processor.yaml
+    arguments:
+        inputs.xnat.scans.scan_t1.types: MPRAGE_SIEMENS_DEFACED
   - name: macruise_v3_2_0_NDW_ROCKLAND
     filepath: macruise_v3.2.0_processor.yaml
   - name: surf_postproc_v1_1_0_NDW_ROCKLAND
@@ -45,5 +47,5 @@ projects:
 
 # NDW_ROCKLAND
   - project: NDW_ROCKLAND
-    yamlprocessors: freesurfer_dev_v2_0_0_NDW_ROCKLAND,cat12_ndw_v1_2_1_NDW_ROCKLAND,cat12_ndw_v2_0_0_NDW_ROCKLAND,FMRIQA_v4_2_0_PNC_V3
+    yamlprocessors: slant_v1_0_0_NDW_ROCKLAND,freesurfer_dev_v2_0_0_NDW_ROCKLAND,cat12_ndw_v1_2_1_NDW_ROCKLAND,cat12_ndw_v2_0_0_NDW_ROCKLAND,FMRIQA_v4_2_0_PNC_V3
 
