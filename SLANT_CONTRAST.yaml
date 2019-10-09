@@ -13,8 +13,6 @@ yamlprocessors:
 # slant_contrast
   - name: FS6_v1_2_3_slant_contrast
     filepath: FS6_v1.2.3_processor.yaml
-    arguments:
-      inputs.xnat.scans.scan_t1.types: T1
 
 projects:
 # slant_contrast
