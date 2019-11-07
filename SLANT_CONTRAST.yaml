@@ -13,6 +13,8 @@ yamlprocessors:
 # slant_contrast
   - name: FS6_v1_2_3_slant_contrast
     filepath: FS6_v1.2.3_processor.yaml
+    attrs.walltime: '72:00:00'
+    attrs.memory: 16000
 
 projects:
 # slant_contrast
