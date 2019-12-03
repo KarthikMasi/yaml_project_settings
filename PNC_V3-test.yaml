@@ -3,7 +3,7 @@ processorlib: /data/mcr/centos7/dax_processors
 modulelib: /data/mcr/centos7/dax_modules
 singularity_imagedir: /data/mcr/centos7/singularity
 attrs:
-  queue_limit: 200
+  queue_limit: 500
   job_email: justin.blaber@vanderbilt.edu
   job_email_options: FAIL
   xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
@@ -46,12 +46,16 @@ yamlprocessors:
     filepath: fsthalconn_v2.0.3_processor.yaml
   - name: fsthalconnMNI_PNC_V3
     filepath: fsthalconnMNI_v1.0.0_processor_DIRJ_test.yaml 
+  - name: ydtiQA_rev_v6_0_0_PNC_V3
+    filepath: ydtiQA_rev_v6.0.0_processor.yaml
+  - name: ydtiQA_multi-PNC_v6_0_0_PNC_V3
+    filepath: ydtiQA-multi-PNC_v6.0.0_processor.yaml
 
 projects:
 
 # PNC_V3
   - project: PNC_V3
-    yamlprocessors: fsthalconn_v2_0_3_PNC_V3,freesurfer_dev_v2_0_0_PNC_V3,FMRIQA_v4_2_0_PNC_V3,CONNPREP_v2_1_0_PNC_V3,fsthalconnMNI_PNC_V3
+#    yamlprocessors: fsthalconn_v2_0_3_PNC_V3,freesurfer_dev_v2_0_0_PNC_V3,FMRIQA_v4_2_0_PNC_V3,CONNPREP_v2_1_0_PNC_V3,fsthalconnMNI_PNC_V3,dtiQA_v6_0_0_PNC_V3
 #    yamlprocessors: slant_v1_0_0_PNC_V3
 #    yamlprocessors: surf_postproc_v1_1_0_PNC_V3
 #    yamlprocessors: surf_quant_v1_1_0_PNC_V3,cat12_ndw_v1_2_1_PNC_V3
@@ -59,4 +63,4 @@ projects:
 #    yamlprocessors: curve_extract_v1_1_0_PNC_V3
 #    yamlprocessors: surf_quant_v1_1_0_PNC_V3
 #    yamlprocessors: surf_postproc_v1_1_0_PNC_V3,surf_quant_v1_1_0_PNC_V3,curve_extract_v1_1_0_PNC_V3,cat12_ndw_v1_2_1_PNC_V3
-
+    yamlprocessors: ydtiQA_multi-PNC_v6_0_0_PNC_V3

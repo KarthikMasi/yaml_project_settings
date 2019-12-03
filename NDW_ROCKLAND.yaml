@@ -3,10 +3,10 @@ processorlib: /data/mcr/centos7/dax_processors
 modulelib: /data/mcr/centos7/dax_modules
 singularity_imagedir: /data/mcr/centos7/singularity
 attrs:
-  queue_limit: 400
+  queue_limit: 500
   job_email: justin.blaber@vanderbilt.edu
   job_email_options: FAIL
-  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  xnat_host: http://129.59.135.143:8080/xnat
   skip_lastupdate: Y
 
 yamlprocessors:
@@ -43,9 +43,15 @@ yamlprocessors:
       inputs.xnat.scans.scan_fmri.types: "REST_1400*"
       inputs.xnat.scans.scan_t1.types: MPRAGE_SIEMENS_DEFACED
       inputs.xnat.assessors.assr_ma.proctypes: slant_v1
+  - name: connprep_rockland_v2_1_0_NDW_ROCKLAND
+    filepath: connprep-ROCKLAND_v2.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_fmri.types: "REST_1400*"
+
+
 projects:
 
 # NDW_ROCKLAND
   - project: NDW_ROCKLAND
-    yamlprocessors: slant_v1_0_0_NDW_ROCKLAND,freesurfer_dev_v2_0_0_NDW_ROCKLAND,cat12_ndw_v1_2_1_NDW_ROCKLAND,cat12_ndw_v2_0_0_NDW_ROCKLAND,FMRIQA_v4_2_0_PNC_V3
+    yamlprocessors: slant_v1_0_0_NDW_ROCKLAND,freesurfer_dev_v2_0_0_NDW_ROCKLAND,cat12_ndw_v1_2_1_NDW_ROCKLAND,cat12_ndw_v2_0_0_NDW_ROCKLAND,FMRIQA_v4_2_0_PNC_V3,connprep_rockland_v2_1_0_NDW_ROCKLAND
 

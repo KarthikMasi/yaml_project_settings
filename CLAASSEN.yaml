@@ -6,7 +6,7 @@ attrs:
   queue_limit: 400
   job_email: ilwoo.lyu@vanderbilt.edu
   job_email_options: FAIL
-  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  xnat_host: http://129.59.135.143:8080/xnat
   skip_lastupdate: Y
 
 yamlprocessors:
@@ -53,6 +53,22 @@ yamlprocessors:
     filepath: FS6_v1.2.0_processor.yaml
   - name: cerebellum_v1_0_0_PREDICTHD
     filepath: cerebellum_v1.0.0_processor.yaml
+  - name: surf_postproc_fs_v1_2_0_PREDICTHD
+    filepath: surf_postproc_fs_v1.2.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1
+  - name: surf_quant_v1_1_0_PREDICTHD
+    filepath: surf_quant_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1
+  - name: curve_extract_v1_1_0_PREDICTHD
+    filepath: curve_extract_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1
+  - name: surf_quant_stat_v1_1_0_PREDICTHD
+    filepath: surf_quant_stat_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1
 
 projects:
 # Claassen_Crave
@@ -64,15 +80,20 @@ projects:
     #yamlprocessors: surf_quant_v1_1_0_Claassen_Crave
     #yamlprocessors: FS6_v1_2_0_Claassen_Crave,multi_atlas_v2_1_0_Claassen_Crave,macruise_classern_v3_2_0_Claassen_Crave,surf_postproc_v1_1_0_Claassen_Crave,surf_quant_v1_1_0_Claassen_Crave,curve_extract_v1_1_0_Claassen_Crave,surf_quant_stat_v1_1_0_Claassen_Crave
     #yamlprocessors: multi_atlas_v2_1_0_Claassen_Crave,FS6_v1_2_0_Claassen_Crave,cerebellum_v1_0_0_Claassen_Crave
-    yamlprocessors: cerebellum_v1_0_0_Claassen_Crave
+    ##yamlprocessors: cerebellum_v1_0_0_Claassen_Crave
 
   - project: Claassen_PAF
     #yamlprocessors: surf_quant_v1_1_0_Claassen_PAF,curve_extract_v1_1_0_Claassen_PAF
-    yamlprocessors: FS6_v1_2_0_Claassen_PAF,multi_atlas_v2_1_0_Claassen_PAF,macruise_classern_v3_2_0_Claassen_PAF,surf_postproc_v1_1_0_Claassen_PAF,surf_quant_v1_1_0_Claassen_PAF,curve_extract_v1_1_0_Claassen_PAF,surf_quant_stat_v1_1_0_Claassen_PAF,cerebellum_v1_0_0_Claassen_PAF
+    ##yamlprocessors: FS6_v1_2_0_Claassen_PAF,multi_atlas_v2_1_0_Claassen_PAF,macruise_classern_v3_2_0_Claassen_PAF,surf_postproc_v1_1_0_Claassen_PAF,surf_quant_v1_1_0_Claassen_PAF,curve_extract_v1_1_0_Claassen_PAF,surf_quant_stat_v1_1_0_Claassen_PAF,cerebellum_v1_0_0_Claassen_PAF
     #yamlprocessors: macruise_classern_v3_2_0_Claassen_PAF
     #yamlprocessors: FS6_v1_2_0_Claassen_PAF
     #yamlprocessors: cerebellum_v1_0_0_Claassen_PAF
 
   - project: PREDICTHD
     #yamlprocessors: FS6_v1_2_0_PREDICTHD,cerebellum_v1_0_0_PREDICTHD 
-    yamlprocessors: cerebellum_v1_0_0_PREDICTHD,multi_atlas_v2_1_0_PREDICTHD
+    #yamlprocessors: cerebellum_v1_0_0_PREDICTHD,multi_atlas_v2_1_0_PREDICTHD,surf_postproc_fs_v1_2_0_PREDICTHD
+    #yamlprocessors: surf_postproc_fs_v1_2_0_PREDICTHD
+    #yamlprocessors: FS6_v1_2_0_PREDICTHD,surf_postproc_fs_v1_2_0_PREDICTHD,surf_quant_v1_1_0_PREDICTHD,curve_extract_v1_1_0_PREDICTHD,surf_quant_stat_v1_1_0_PREDICTHD
+    #yamlprocessors: surf_quant_v1_1_0_PREDICTHD,curve_extract_v1_1_0_PREDICTHD,surf_quant_stat_v1_1_0_PREDICTHD
+    yamlprocessors: surf_quant_stat_v1_1_0_PREDICTHD
+    #yamlprocessors: cerebellum_v1_0_0_PREDICTHD,multi_atlas_v2_1_0_PREDICTHD

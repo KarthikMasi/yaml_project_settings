@@ -6,7 +6,7 @@ attrs:
   queue_limit: 400
   job_email: justin.blaber@vanderbilt.edu
   job_email_options: FAIL
-  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  xnat_host: http://129.59.135.143:8080/xnat
   skip_lastupdate: Y
 
 yamlprocessors:
@@ -20,7 +20,7 @@ yamlprocessors:
   - name: freesurfer_dev_v2_0_0_MP2RAGE
     filepath: freesurfer_dev_v2_0_0_mp2rage.yaml
     arguments:
-      attrs.walltime: "108:00:00"
+      attrs.walltime: "336:00:00"
 
 modules:
 # PSYXSEC

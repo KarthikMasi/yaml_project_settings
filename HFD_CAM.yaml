@@ -4,26 +4,36 @@ modulelib: /data/mcr/centos7/dax_modules
 singularity_imagedir: /data/mcr/centos7/singularity
 attrs:
   queue_limit: 500
-  job_email: camilo.bermudez@vanderbilt.edu
+  job_email: karthik.ramadass@vanderbilt.edu
   job_email_options: FAIL
   xnat_host: http://129.59.135.143:8080/xnat
   skip_lastupdate: Y
 
 yamlprocessors:
-# slant_contrast
-  - name: FS6_v1_2_3_slant_contrast
+# hfd_cam
+  - name: FS6_v1_2_3_hfd_cam
     filepath: FS6_v1.2.3_processor.yaml
     arguments:
       attrs.walltime: "72:00:00"
       attrs.memory: 16000
 
-  - name: surf_postproc_fs_v1_2_1_slant_contrast
+  - name: surf_postproc_fs_v1_2_1_hfd_cam
     filepath: surf_postproc_fs_v1.2.1_processor.yaml
     arguments:
       inputs.xnat.scans.scan_t1.types: T1
 
+  - name: slant_v1_0_0_hfd_cam
+    filepath: slant_v1.0.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1
+
+  - name: macruise_v3_2_0_hfd_cam
+    filepath: macruise_v3.2.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1
+
 projects:
-# slant_contrast
-  - project: slant_contrast
-    yamlprocessors: FS6_v1_2_3_slant_contrast,surf_postproc_fs_v1_2_1_slant_contrast
+# hfd_cam
+  - project: hfd_cam
+    yamlprocessors: FS6_v1_2_3_hfd_cam,slant_v1_0_0_hfd_cam,macruise_v3_2_0_hfd_cam
    

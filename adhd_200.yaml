@@ -10,51 +10,46 @@ attrs:
   skip_lastupdate: Y
 
 yamlprocessors:
-# ABIDE
-  - name: slant_v1_0_0_ABIDE
+# adhd_200
+  - name: slant_v1_0_0_adhd_200
     filepath: slant_v1.0.0_processor.yaml
     arguments:
       inputs.xnat.scans.scan_t1.types: T1
-  - name: surf_postproc_fs_v1_2_1_ABIDE
+  - name: surf_postproc_fs_v1_2_1_adhd_200
     filepath: surf_postproc_fs_v1.2.1_processor.yaml
     arguments:
       inputs.xnat.scans.scan_t1.types: T1
-  - name: FS6_v1_2_3_ABIDE
+  - name: FS6_v1_2_3_adhd_200
     filepath: FS6_v1.2.3_processor.yaml
     arguments:
       inputs.xnat.scans.scan_t1.types: T1
-  - name: multi_atlas_v2_1_0_ABIDE
+  - name: multi_atlas_v2_1_0_adhd_200
     filepath: Multi_Atlas_v2.1.0_processor.yaml
     arguments:
       inputs.xnat.scans.scan_t1.types: T1
-  - name: surf_quant_v1_1_0_ABIDE
+  - name: surf_quant_v1_1_0_adhd_200
     filepath: surf_quant_v1.1.0_processor.yaml
     arguments:
       inputs.xnat.scans.scan_t1.types: T1
-  - name: curve_extract_v1_1_0_ABIDE
+  - name: curve_extract_v1_1_0_adhd_200
     filepath: curve_extract_v1.1.0_processor.yaml
     arguments:
       inputs.xnat.scans.scan_t1.types: T1
-  - name: surf_quant_stat_v1_1_0_ABIDE
+  - name: surf_quant_stat_v1_1_0_adhd_200
     filepath: surf_quant_stat_v1.1.0_processor.yaml
     arguments:
       inputs.xnat.scans.scan_t1.types: T1
-  - name: macruise_v3_2_0_ABIDE
+  - name: macruise_v3_2_0_adhd_200
     filepath: macruise_v3.2.0_processor.yaml
     arguments:
       inputs.xnat.scans.scan_t1.types: T1
-  - name: surf_postproc_cruise_v1_1_0_ABIDE
-    filepath: surf_postproc_v1.1.0_processor.yaml
+  - name: surf_postproc_cruise_v1_2_0_adhd_200
+    filepath: surf_postproc_v1.2.0_processor.yaml
     arguments:
       inputs.xnat.scans.scan_t1.types: T1
 
 projects:
-# ABIDE
-  - project: ABIDE
-#    yamlprocessors: slant_v1_0_0_ABIDE
-#    yamlprocessors: surf_quant_stat_v1_1_0_ABIDE
-    yamlprocessors: macruise_v3_2_0_ABIDE,surf_postproc_cruise_v1_1_0_ABIDE,FS6_v1_2_3_ABIDE,surf_postproc_fs_v1_2_1_ABIDE,FS6_v1_2_3_ABIDE
-#    yamlprocessors: surf_postproc_cruise_v1_1_0_ABIDE
-#    yamlprocessors: surf_quant_v1_1_0_ABIDE,curve_extract_v1_1_0_CASCIO_CM
-#    yamlprocessors: FS6_v1_2_0_ABIDE,multi_atlas_v2_1_0_CASCIO_CM,macruise_multiatlas_v3_2_0_CASCIO_CM,surf_postproc_cruise_v1_1_0_CASCIO_CM,surf_quant_v1_1_0_CASCIO_CM,curve_extract_v1_1_0_CASCIO_CM,surf_quant_stat_v1_1_0_CASCIO_CM
-#    yamlprocessors: FS6_v1_2_0_ABIDE,multi_atlas_v2_1_0_CASCIO_CM,surf_postproc_fs_v1_1_0_CASCIO_CM,surf_quant_v1_1_0_CASCIO_CM,curve_extract_v1_1_0_CASCIO_CM,surf_quant_stat_v1_1_0_CASCIO_CM
+# adhd_200
+  - project: adhd_200
+    #yamlprocessors: slant_v1_0_0_adhd_200,FS6_v1_2_3_adhd_200
+    yamlprocessors: macruise_v3_2_0_adhd_200,surf_postproc_fs_v1_2_1_adhd_200

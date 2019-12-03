@@ -3,10 +3,10 @@ processorlib: /data/mcr/centos7/dax_processors
 modulelib: /data/mcr/centos7/dax_modules
 singularity_imagedir: /data/mcr/centos7/singularity
 attrs:
-  queue_limit: 400
+  queue_limit: 500
   job_email: ilwoo.lyu@vanderbilt.edu
   job_email_options: FAIL
-  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  xnat_host: http://129.59.135.143:8080/xnat
   skip_lastupdate: Y
 
 yamlprocessors:
@@ -23,32 +23,56 @@ yamlprocessors:
     filepath: FS6_v1.2.3_processor.yaml
     arguments:
       inputs.xnat.scans.scan_t1.types: T1W_3D_TFE,T1W_3D_TFE_SENSE
+      attrs.walltime: "72:00:00"
   - name: surf_postproc_macruise_v1_2_0_LYU_ASD
     filepath: surf_postproc_v1.2.0_processor.yaml
     arguments:
       inputs.xnat.scans.scan_t1.types: T1W_3D_TFE,T1W_3D_TFE_SENSE
-  - name: surf_postproc_fs_v1_2_0_LYU_ASD
-    filepath: surf_postproc_fs_v1.2.0_processor.yaml
+  - name: surf_postproc_fs_v1_2_1_LYU_ASD
+    filepath: surf_postproc_fs_v1.2.1_processor.yaml
     arguments:
-      #procname: surf_postproc_fs
       inputs.xnat.scans.scan_t1.types: T1W_3D_TFE,T1W_3D_TFE_SENSE
   - name: surf_quant_v1_1_0_LYU_ASD
     filepath: surf_quant_v1.1.0_processor.yaml
     arguments:
       inputs.xnat.scans.scan_t1.types: T1W_3D_TFE,T1W_3D_TFE_SENSE 
+      attrs.walltime: "120:00:00"
+      attrs.memory: 80000
   - name: curve_extract_v1_1_0_LYU_ASD
     filepath: curve_extract_v1.1.0_processor.yaml
     arguments:
       inputs.xnat.scans.scan_t1.types: T1W_3D_TFE,T1W_3D_TFE_SENSE 
+      attrs.walltime: "4:00:00"
+      attrs.memory: 16000
   - name: surf_quant_stat_v1_1_0_LYU_ASD
     filepath: surf_quant_stat_v1.1.0_processor.yaml
     arguments:
       inputs.xnat.scans.scan_t1.types: T1W_3D_TFE,T1W_3D_TFE_SENSE 
+  - name: brain_age_v2_0_0_LYU_ASD
+    filepath: BrainAgeGap_v2.0.0_processor.yaml
+  - name: multi_atlas_v2_1_0_LYU_ASD
+    filepath: Multi_Atlas_v2.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1W_3D_TFE
+      attrs.walltime: "120:00:00"
 
 projects:
 #LYU_ASD
   - project: LYU_ASD
-    #yamlprocessors: slant_v1_0_0_LYU_ASD,FS6_v1_2_3_LYU_ASD,macruise_v3_2_0_LYU_ASD,surf_postproc_macruise_v1_2_0_LYU_ASD
+    #yamlprocessors: slant_v1_0_0_LYU_ASD,FS6_v1_2_3_LYU_ASD
+    #yamlprocessors: slant_v1_0_0_LYU_ASD
+    #yamlprocessors: macruise_v3_2_0_LYU_ASD,surf_postproc_macruise_v1_2_0_LYU_ASD
     #yamlprocessors: macruise_v3_2_0_LYU_ASD
-    yamlprocessors: surf_postproc_fs_v1_2_0_LYU_ASD
-    #yamlprocessors: surf_quant_v1_1_0_LYU_ASD,curve_extract_v1_1_0_LYU_ASD,surf_quant_stat_v1_1_0_LYU_ASD
+    #yamlprocessors: FS6_v1_2_3_LYU_ASD,surf_postproc_macruise_v1_2_0_LYU_ASD,surf_quant_v1_1_0_LYU_ASD,curve_extract_v1_1_0_LYU_ASD,surf_quant_stat_v1_1_0_LYU_ASD
+    #yamlprocessors: FS6_v1_2_3_LYU_ASD,surf_quant_stat_v1_1_0_LYU_ASD
+#    yamlprocessors: FS6_v1_2_3_LYU_ASD,macruise_v3_2_0_LYU_ASD,surf_postproc_macruise_v1_2_0_LYU_ASD,surf_quant_v1_1_0_LYU_ASD,curve_extract_v1_1_0_LYU_ASD,surf_quant_stat_v1_1_0_LYU_ASD
+    #yamlprocessors: surf_postproc_macruise_v1_2_0_LYU_ASD
+    #yamlprocessors: surf_postproc_fs_v1_2_0_LYU_ASD,multi_atlas_v2_1_0_LYU_ASD
+    yamlprocessors: multi_atlas_v2_1_0_LYU_ASD,brain_age_v2_0_0_LYU_ASD
+    #yamlprocessors: surf_postproc_fs_v1_2_1_LYU_ASD
+    #yamlprocessors: FS6_v1_2_3_LYU_ASD,surf_quant_v1_1_0_LYU_ASD,curve_extract_v1_1_0_LYU_ASD,surf_quant_stat_v1_1_0_LYU_ASD
+    #yamlprocessors: surf_quant_stat_v1_1_0_LYU_ASD
+    #yamlprocessors: brain_age_v2_0_0_LYU_ASD
+    #yamlprocessors: curve_extract_v1_1_0_LYU_ASD
+    #yamlprocessors: surf_quant_v1_1_0_LYU_ASD
+    #yamlprocessors: curve_extract_v1_1_0_LYU_ASD,surf_quant_v1_1_0_LYU_ASD

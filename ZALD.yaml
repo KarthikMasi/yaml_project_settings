@@ -6,7 +6,7 @@ attrs:
   queue_limit: 400
   job_email: ilwoo.lyu@vanderbilt.edu
   job_email_options: FAIL
-  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  xnat_host: http://129.59.135.143:8080/xnat
   skip_lastupdate: Y
 
 yamlprocessors:
@@ -25,6 +25,7 @@ yamlprocessors:
     filepath: surf_quant_stat_v1.1.0_processor.yaml
   - name: dtiqa_ZALD_TTS
     filepath: dtiQA_rev_v6.0.0_processor.yaml
+    #filepath: dtiQA_v6.0.0_processor.yaml
     arguments:
       inputs.xnat.scans.scan_dti.types: dti
 
@@ -34,5 +35,5 @@ projects:
 #    yamlprocessors: slant_v1_0_0_ZALD_TTS
 #    yamlprocessors: slant_v1_0_0_ZALD_TTS,surf_quant_stat_v1_1_0_ZALD_TTS,FS6_v1_2_0_ZALD_TTS
 #    yamlprocessors: surf_postproc_fs_v1_1_0_ZALD_TTS,surf_quant_v1_1_0_ZALD_TTS,curve_extract_v1_1_0_ZALD_TTS,surf_quant_stat_v1_1_0_ZALD_TTS
-    yamlprocessors: FS6_v1_2_0_ZALD_TTS
+    yamlprocessors: FS6_v1_2_0_ZALD_TTS,dtiqa_ZALD_TTS
     #yamlprocessors: dtiqa_ZALD_TTS

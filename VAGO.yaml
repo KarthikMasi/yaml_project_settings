@@ -3,7 +3,7 @@ processorlib: /data/mcr/centos7/dax_processors
 modulelib: /data/mcr/centos7/dax_modules
 singularity_imagedir: /data/mcr/centos7/singularity
 attrs:
-  queue_limit: 400
+  queue_limit: 500
   job_email: justin.blaber@vanderbilt.edu
   job_email_options: FAIL
   xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
@@ -16,8 +16,20 @@ modules:
     arguments:
       dcm2niixpath: /data/mcr/centos7/dcm2niix/16_JULY_2019/console/dcm2niix
 
+yamlprocessors:
+
+# VAGO
+  - name: slant_v1_0_0_VAGO
+    filepath: slant_v1.0.0_processor.yaml
+    arguments:
+        inputs.xnat.scans.scan_t1.types: cs_AnatBrain_T1W3D
+  - name: macruise_v3_2_0_VAGO
+    filepath: macruise_v3.2.0_processor.yaml
+    arguments:
+        inputs.xnat.scans.scan_t1.types: cs_AnatBrain_T1W3D
 
 projects:
 # VAGO
   - project: VAGO
+    yamlprocessors: slant_v1_0_0_VAGO,macruise_v3_2_0_VAGO
     modules: dcm2niix_VAGO
