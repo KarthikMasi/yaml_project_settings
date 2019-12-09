@@ -52,4 +52,4 @@ projects:
 # IXI
   - project: IXI
     #yamlprocessors: slant_v1_0_0_IXI,FS6_v1_2_3_IXI
-    yamlprocessors: surf_postproc_fs_v1_2_1_IXI,macruise_v3_2_0_IXI
+    yamlprocessors: FS6_v1_2_3_IXI,surf_postproc_fs_v1_2_1_IXI,macruise_v3_2_0_IXI,surf_postproc_cruise_v1_2_0_IXI

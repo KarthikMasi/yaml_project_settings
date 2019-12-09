@@ -52,4 +52,4 @@ projects:
 # adhd_200
   - project: adhd_200
     #yamlprocessors: slant_v1_0_0_adhd_200,FS6_v1_2_3_adhd_200
-    yamlprocessors: macruise_v3_2_0_adhd_200,surf_postproc_fs_v1_2_1_adhd_200
+    yamlprocessors: FS6_v1_2_3_adhd_200,macruise_v3_2_0_adhd_200,surf_postproc_fs_v1_2_1_adhd_200,surf_postproc_cruise_v1_2_0_adhd_200

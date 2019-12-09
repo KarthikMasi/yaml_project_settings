@@ -1,0 +1,20 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 500
+  job_email: karthik.ramadass@vamderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+  - name: mavol-MA1_v1.0.0_VISIONS
+    filepath: mavol-MA1_v1.0.0_processor.yaml
+  - name: mavol-MA2_v2.0.0_VISIONS
+    filepath: mavol-MA2_v1.0.1_processor.yaml
+
+projects:
+  - project: VISIONS_2017
+    yamlprocessors: mavol-MA1_v1.0.0_VISIONS,mavol-MA2_v2.0.0_VISIONS

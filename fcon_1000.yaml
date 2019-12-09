@@ -52,4 +52,4 @@ projects:
 # fcon_1000
   - project: fcon_1000
     #yamlprocessors: slant_v1_0_0_fcon_1000,FS6_v1_2_3_fcon_1000
-    yamlprocessors: surf_postproc_fs_v1_2_1_fcon_1000,macruise_v3_2_0_fcon_1000
+    yamlprocessors: FS6_v1_2_3_fcon_1000,surf_postproc_fs_v1_2_1_fcon_1000,macruise_v3_2_0_fcon_1000,surf_postproc_cruise_v1_2_0_fcon_1000

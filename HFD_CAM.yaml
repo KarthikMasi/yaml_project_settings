@@ -32,8 +32,13 @@ yamlprocessors:
     arguments:
       inputs.xnat.scans.scan_t1.types: T1
 
+  - name: surf_postproc_macruise_v1_2_0_hfd_cam
+    filepath: surf_postproc_v1.2.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1
+
 projects:
 # hfd_cam
   - project: hfd_cam
-    yamlprocessors: FS6_v1_2_3_hfd_cam,slant_v1_0_0_hfd_cam,macruise_v3_2_0_hfd_cam
+    yamlprocessors: FS6_v1_2_3_hfd_cam,slant_v1_0_0_hfd_cam,macruise_v3_2_0_hfd_cam,surf_postproc_macruise_v1_2_0_hfd_cam
    
