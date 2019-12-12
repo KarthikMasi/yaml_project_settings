@@ -10,11 +10,11 @@ attrs:
   skip_lastupdate: Y
 
 yamlprocessors:
-  - name: mavol-MA1_v1.0.1_VISIONS
+  - name: mavol-MA1_v1.0.1_JEFFERSON
     filepath: mavol-MA1_v1.0.1_processor.yaml
-  - name: mavol-MA2_v1.0.1_VISIONS
+  - name: mavol-MA2_v1.0.1_JEFFERSON
     filepath: mavol-MA2_v1.0.1_processor.yaml
 
 projects:
-  - project: VISIONS_2017
-    yamlprocessors: mavol-MA1_v1.0.1_VISIONS,mavol-MA2_v1.0.1_VISIONS
+  - project: JEFFERSON 
+    yamlprocessors: mavol-MA1_v1.0.1_JEFFERSON,mavol-MA2_v1.0.1_JEFFERSON

@@ -3,7 +3,7 @@ processorlib: /data/mcr/centos7/dax_processors
 modulelib: /data/mcr/centos7/dax_modules
 singularity_imagedir: /data/mcr/centos7/singularity
 attrs:
-  queue_limit: 400
+  queue_limit: 500
   job_email: ilwoo.lyu@vanderbilt.edu
   job_email_options: FAIL
   xnat_host: http://129.59.135.143:8080/xnat
@@ -27,6 +27,10 @@ yamlprocessors:
     filepath: FS6_v1.2.0_processor.yaml
   - name: cerebellum_v1_0_0_Claassen_Crave
     filepath: cerebellum_v1.0.0_processor.yaml
+  - name: mavol-MA1_v1.0.1_Claassen_Crave
+    filepath: mavol-MA1_v1.0.1_processor.yaml
+  - name: mavol-MA2_v1.0.1_Claassen_Crave
+    filepath: mavol-MA2_v1.0.1_processor.yaml
 
 # Claassen_PAF
   - name: multi_atlas_v2_1_0_Claassen_PAF
@@ -73,6 +77,7 @@ yamlprocessors:
 projects:
 # Claassen_Crave
   - project: Claassen_Crave
+    yamlprocessors: mavol-MA1_v1.0.1_Claassen_Crave,mavol-MA2_v1.0.1_Claassen_Crave
     #yamlprocessors: curve_extract_v1_1_0_Claassen_Crave
     #yamlprocessors: curve_extract_v1_1_0_Claassen_Crave,surf_quant_v1_1_0_Claassen_Crave
     #yamlprocessors: surf_postproc_v1_1_0_Claassen_Crave
@@ -95,5 +100,5 @@ projects:
     #yamlprocessors: surf_postproc_fs_v1_2_0_PREDICTHD
     #yamlprocessors: FS6_v1_2_0_PREDICTHD,surf_postproc_fs_v1_2_0_PREDICTHD,surf_quant_v1_1_0_PREDICTHD,curve_extract_v1_1_0_PREDICTHD,surf_quant_stat_v1_1_0_PREDICTHD
     #yamlprocessors: surf_quant_v1_1_0_PREDICTHD,curve_extract_v1_1_0_PREDICTHD,surf_quant_stat_v1_1_0_PREDICTHD
-    yamlprocessors: surf_quant_stat_v1_1_0_PREDICTHD
+    #yamlprocessors: surf_quant_stat_v1_1_0_PREDICTHD
     #yamlprocessors: cerebellum_v1_0_0_PREDICTHD,multi_atlas_v2_1_0_PREDICTHD

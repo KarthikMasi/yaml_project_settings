@@ -3,7 +3,7 @@ processorlib: /data/mcr/centos7/dax_processors
 modulelib: /data/mcr/centos7/dax_modules
 singularity_imagedir: /data/mcr/centos7/singularity
 attrs:
-  queue_limit: 400
+  queue_limit: 500
   job_email: justin.blaber@vanderbilt.edu
   job_email_options: FAIL
   xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
@@ -21,8 +21,12 @@ yamlprocessors:
     filepath: modularity_3study_v1.0.0.yaml
   - name: freesurfer_dev_v1_0_0_WOODWARD_TCP
     filepath: freesurfer_dev_v1.0.0.yaml
+  - name: mavol-MA1_v1.0.1_WOODWARD_TCP
+    filepath: mavol-MA1_v1.0.1_processor.yaml
+  - name: mavol-MA2_v1.0.1_WOODWARD_TCP
+    filepath: mavol-MA2_v1.0.1_processor.yaml
 
 projects:
 # WOODWARD_TCP
   - project: WOODWARD_TCP
-    yamlprocessors: conncalc_jsins_v1_0_1_WOODWARD_TCP,ndw_wm_edat_v3_0_0_WOODWARD_TCP,modularity_3study_v1_0_0_WOODWARD_TCP,freesurfer_dev_v1_0_0_WOODWARD_TCP,gsbss_v3_1_0_WOODWARD_TCP
+    yamlprocessors: conncalc_jsins_v1_0_1_WOODWARD_TCP,ndw_wm_edat_v3_0_0_WOODWARD_TCP,modularity_3study_v1_0_0_WOODWARD_TCP,freesurfer_dev_v1_0_0_WOODWARD_TCP,gsbss_v3_1_0_WOODWARD_TCP,mavol-MA1_v1.0.1_WOODWARD_TCP,mavol-MA2_v1.0.1_WOODWARD_TCP
