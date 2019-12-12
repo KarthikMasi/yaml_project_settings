@@ -3,7 +3,7 @@ processorlib: /data/mcr/centos7/dax_processors
 modulelib: /data/mcr/centos7/dax_modules
 singularity_imagedir: /data/mcr/centos7/singularity
 attrs:
-  queue_limit: 200
+  queue_limit: 500
   job_email: ilwoo.lyu@vanderbilt.edu
   job_email_options: FAIL
   xnat_host: http://129.59.135.143:8080/xnat
@@ -52,4 +52,4 @@ projects:
 # cutting_ped
   - project: CuttingPed
     #yamlprocessors: slant_v1_0_0_cutting_ped,FS6_v1_2_3_cutting_ped
-    yamlprocessors: FS6_v1_2_3_cutting_ped,surf_postproc_fs_v1_2_1_cutting_ped,macruise_v3_2_0_cutting_ped
+    #offyamlprocessors: FS6_v1_2_3_cutting_ped,surf_postproc_fs_v1_2_1_cutting_ped,macruise_v3_2_0_cutting_ped

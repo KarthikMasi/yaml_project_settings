@@ -3,7 +3,7 @@ processorlib: /data/mcr/centos7/dax_processors
 modulelib: /data/mcr/centos7/dax_modules
 singularity_imagedir: /data/mcr/centos7/singularity
 attrs:
-  queue_limit: 200
+  queue_limit: 500
   job_email: ilwoo.lyu@vanderbilt.edu
   job_email_options: FAIL
   xnat_host: http://129.59.135.143:8080/xnat
@@ -52,4 +52,4 @@ projects:
 # IXI
   - project: IXI
     #yamlprocessors: slant_v1_0_0_IXI,FS6_v1_2_3_IXI
-    yamlprocessors: FS6_v1_2_3_IXI,surf_postproc_fs_v1_2_1_IXI,macruise_v3_2_0_IXI,surf_postproc_cruise_v1_2_0_IXI
+    #OFFyamlprocessors: FS6_v1_2_3_IXI,surf_postproc_fs_v1_2_1_IXI,macruise_v3_2_0_IXI,surf_postproc_cruise_v1_2_0_IXI

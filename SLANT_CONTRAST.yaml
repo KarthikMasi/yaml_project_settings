@@ -3,7 +3,7 @@ processorlib: /data/mcr/centos7/dax_processors
 modulelib: /data/mcr/centos7/dax_modules
 singularity_imagedir: /data/mcr/centos7/singularity
 attrs:
-  queue_limit: 200
+  queue_limit: 500
   job_email: camilo.bermudez@vanderbilt.edu
   job_email_options: FAIL
   xnat_host: http://129.59.135.143:8080/xnat
@@ -25,5 +25,6 @@ yamlprocessors:
 projects:
 # slant_contrast
   - project: slant_contrast
-    yamlprocessors: FS6_v1_2_3_slant_contrast,surf_postproc_fs_v1_2_1_slant_contrast
+    #offyamlprocessors: FS6_v1_2_3_slant_contrast,surf_postproc_fs_v1_2_1_slant_contrast
+    
    
