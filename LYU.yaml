@@ -48,8 +48,8 @@ yamlprocessors:
     filepath: surf_quant_stat_v1.1.0_processor.yaml
     arguments:
       inputs.xnat.scans.scan_t1.types: T1W_3D_TFE,T1W_3D_TFE_SENSE 
-  - name: brain_age_v2_0_0_LYU_ASD
-    filepath: BrainAgeGap_v2.0.0_processor.yaml
+  - name: brain_age_v2_0_1_LYU_ASD
+    filepath: BrainAgeGap_v2.0.1_processor.yaml
   - name: multi_atlas_v2_1_0_LYU_ASD
     filepath: Multi_Atlas_v2.1.0_processor.yaml
     arguments:
@@ -68,7 +68,7 @@ projects:
 #    yamlprocessors: FS6_v1_2_3_LYU_ASD,macruise_v3_2_0_LYU_ASD,surf_postproc_macruise_v1_2_0_LYU_ASD,surf_quant_v1_1_0_LYU_ASD,curve_extract_v1_1_0_LYU_ASD,surf_quant_stat_v1_1_0_LYU_ASD
     #yamlprocessors: surf_postproc_macruise_v1_2_0_LYU_ASD
     #yamlprocessors: surf_postproc_fs_v1_2_0_LYU_ASD,multi_atlas_v2_1_0_LYU_ASD
-    yamlprocessors: multi_atlas_v2_1_0_LYU_ASD,brain_age_v2_0_0_LYU_ASD
+    yamlprocessors: multi_atlas_v2_1_0_LYU_ASD,brain_age_v2_0_1_LYU_ASD
     #yamlprocessors: surf_postproc_fs_v1_2_1_LYU_ASD
     #yamlprocessors: FS6_v1_2_3_LYU_ASD,surf_quant_v1_1_0_LYU_ASD,curve_extract_v1_1_0_LYU_ASD,surf_quant_stat_v1_1_0_LYU_ASD
     #yamlprocessors: surf_quant_stat_v1_1_0_LYU_ASD

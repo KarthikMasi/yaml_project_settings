@@ -25,6 +25,6 @@ yamlprocessors:
 projects:
 # slant_contrast
   - project: slant_contrast
-    #offyamlprocessors: FS6_v1_2_3_slant_contrast,surf_postproc_fs_v1_2_1_slant_contrast
+    yamlprocessors: FS6_v1_2_3_slant_contrast,surf_postproc_fs_v1_2_1_slant_contrast
     
    

@@ -9,12 +9,22 @@ attrs:
   xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
   skip_lastupdate: Y
 
+modules:
+  - name: rc
+    filepath: Module_baxter_redcap_sync.py
+    arguments:
+      proctypes: Multi_Atlas_Fix_v1;Multi_Atlas_v2_Fix_v1;Temporal_Lobe_v3_Fix_v1
+      resources: STATS;STATS;STATS
+
 yamlprocessors:
   - name: mavol-MA1_v1.0.1_VISIONS
     filepath: mavol-MA1_v1.0.1_processor.yaml
   - name: mavol-MA2_v1.0.1_VISIONS
     filepath: mavol-MA2_v1.0.1_processor.yaml
-
+  - name: mavol-TL_v1_0_0_VISIONS
+    filepath: mavol-TL_v1.0.0_processor.yaml
 projects:
   - project: VISIONS_2017
-    yamlprocessors: mavol-MA1_v1.0.1_VISIONS,mavol-MA2_v1.0.1_VISIONS
+    yamlprocessors: mavol-MA1_v1.0.1_VISIONS,mavol-MA2_v1.0.1_VISIONS,mavol-TL_v1_0_0_VISIONS
+    modules: rc
+

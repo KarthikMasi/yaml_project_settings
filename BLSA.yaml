@@ -46,7 +46,7 @@ projects:
 #    yamlprocessors: FS6_v1_2_0_BLSA
 #    yamlprocessors: FS6_v1_2_0_BLSA,macruise_multiatlas_v3_2_0_BLSA,surf_postproc_v1_1_0_BLSA
 #    yamlprocessors: FS6_v1_2_0_BLSA,macruise_multiatlas_v3_2_0_BLSA,surf_postproc_v1_1_0_BLSA,surf_quant_v1_1_0_BLSA,curve_extract_v1_1_0_BLSA,surf_quant_stat_v1_1_0_BLSA
-    #offyamlprocessors: FS6_v1_2_0_BLSA,macruise_multiatlas_v3_2_0_BLSA,surf_postproc_v1_1_0_BLSA,surf_quant_v1_1_0_BLSA,curve_extract_v1_1_0_BLSA,surf_quant_stat_v1_1_0_BLSA
+     yamlprocessors: FS6_v1_2_0_BLSA,macruise_multiatlas_v3_2_0_BLSA,surf_postproc_v1_1_0_BLSA,surf_quant_v1_1_0_BLSA,curve_extract_v1_1_0_BLSA,surf_quant_stat_v1_1_0_BLSA
 #    yamlprocessors: surf_quant_stat_v1_1_0_BLSA
 #    yamlprocessors: surf_postproc_v1_1_0_BLSA,surf_quant_v1_1_0_BLSA,curve_extract_v1_1_0_BLSA,surf_quant_stat_v1_1_0_BLSA
 #    yamlprocessors: surf_quant_v1_1_0_BLSA,curve_extract_v1_1_0_BLSA,surf_quant_stat_v1_1_0_BLSA
