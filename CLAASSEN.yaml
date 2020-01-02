@@ -74,6 +74,10 @@ yamlprocessors:
     arguments:
       inputs.xnat.scans.scan_t1.types: T1
 
+#Claassen_Hippo
+  - name: mavol-TL_v1_0_0_Claassen_Hippo
+    filepath: mavol-TL_v1.0.0_processor.yaml
+
 projects:
 # Claassen_Crave
   - project: Claassen_Crave
@@ -102,3 +106,6 @@ projects:
     #yamlprocessors: surf_quant_v1_1_0_PREDICTHD,curve_extract_v1_1_0_PREDICTHD,surf_quant_stat_v1_1_0_PREDICTHD
     #yamlprocessors: surf_quant_stat_v1_1_0_PREDICTHD
     #yamlprocessors: cerebellum_v1_0_0_PREDICTHD,multi_atlas_v2_1_0_PREDICTHD
+    
+  - project: Claassen_Hippo
+    yamlprocessors: mavol-TL_v1_0_0_Claassen_Hippo

@@ -38,6 +38,9 @@ yamlprocessors:
     filepath: surf_quant_stat_v1.1.0_processor.yaml
     arguments:
       inputs.xnat.scans.scan_t1.types: T1,MPRAGE
+  - name: mavol-TL_v1_0_0_BLSA
+    filepath: mavol-TL_v1.0.0_processor.yaml
+
 
 projects:
 # BLSA
@@ -46,7 +49,7 @@ projects:
 #    yamlprocessors: FS6_v1_2_0_BLSA
 #    yamlprocessors: FS6_v1_2_0_BLSA,macruise_multiatlas_v3_2_0_BLSA,surf_postproc_v1_1_0_BLSA
 #    yamlprocessors: FS6_v1_2_0_BLSA,macruise_multiatlas_v3_2_0_BLSA,surf_postproc_v1_1_0_BLSA,surf_quant_v1_1_0_BLSA,curve_extract_v1_1_0_BLSA,surf_quant_stat_v1_1_0_BLSA
-     yamlprocessors: FS6_v1_2_0_BLSA,macruise_multiatlas_v3_2_0_BLSA,surf_postproc_v1_1_0_BLSA,surf_quant_v1_1_0_BLSA,curve_extract_v1_1_0_BLSA,surf_quant_stat_v1_1_0_BLSA
+    yamlprocessors: FS6_v1_2_0_BLSA,macruise_multiatlas_v3_2_0_BLSA,surf_postproc_v1_1_0_BLSA,surf_quant_v1_1_0_BLSA,curve_extract_v1_1_0_BLSA,surf_quant_stat_v1_1_0_BLSA,mavol-TL_v1_0_0_BLSA
 #    yamlprocessors: surf_quant_stat_v1_1_0_BLSA
 #    yamlprocessors: surf_postproc_v1_1_0_BLSA,surf_quant_v1_1_0_BLSA,curve_extract_v1_1_0_BLSA,surf_quant_stat_v1_1_0_BLSA
 #    yamlprocessors: surf_quant_v1_1_0_BLSA,curve_extract_v1_1_0_BLSA,surf_quant_stat_v1_1_0_BLSA

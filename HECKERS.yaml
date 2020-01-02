@@ -27,6 +27,9 @@ yamlprocessors:
     filepath: freesurfer_dev_v1.0.0.yaml
     arguments:
       inputs.xnat.scans.scan_t1.types: T1
+  - name: mavol-TL_v1_0_0_HeckersFEPH3T
+    filepath: mavol-TL_v1.0.0_processor.yaml
+
 # HeckersPGPP
   - name: FS6_v1_2_0_HeckersPGPP
     filepath: FS6_v1.2.0_processor.yaml
@@ -63,4 +66,4 @@ projects:
      
 # HeckersFEPH3T
   - project: HeckersFEPH3T
-    yamlprocessors: fmri_conncalc_SZhab_v1_0_0_HeckersFEPH3T,FS6_v1_0_0_HeckersFEPH3T,dtiQA_v6_0_0_HeckersFEPH3T,tracula_v2_0_0_HeckersFEPH3T,conncalc_jsins_v1_0_1_HeckersFEPH3T,modularity_3study_v1_0_0_HeckersFEPH3T,freesurfer_dev_v1_0_0_HeckersFEPH3T
+    yamlprocessors: fmri_conncalc_SZhab_v1_0_0_HeckersFEPH3T,FS6_v1_0_0_HeckersFEPH3T,dtiQA_v6_0_0_HeckersFEPH3T,tracula_v2_0_0_HeckersFEPH3T,conncalc_jsins_v1_0_1_HeckersFEPH3T,modularity_3study_v1_0_0_HeckersFEPH3T,freesurfer_dev_v1_0_0_HeckersFEPH3T,mavol-TL_v1_0_0_HeckersFEPH3T

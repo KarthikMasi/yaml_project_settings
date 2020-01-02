@@ -1,0 +1,19 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 1000
+  job_email: karthik.ramadass@vamderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+  - name: mavol-TL_v1_0_0_AMYGDALA
+    filepath: mavol-TL_v1.0.0_processor.yaml
+
+projects:
+  - project: AMYGDALA
+    yamlprocessors: mavol-TL_v1_0_0_AMYGDALA
+

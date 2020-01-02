@@ -9,6 +9,13 @@ attrs:
   xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
   skip_lastupdate: Y
 
+modules:
+  - name: rc
+    filepath: Module_baxter_redcap_sync.py
+    arguments:
+      proctypes: Multi_Atlas_v2_Fix_v1
+      resources: STATS
+
 yamlprocessors:
 # WOODWARD_TCP
   - name: conncalc_jsins_v1_0_1_WOODWARD_TCP
@@ -29,4 +36,5 @@ yamlprocessors:
 projects:
 # WOODWARD_TCP
   - project: WOODWARD_TCP
+    modules: rc
     yamlprocessors: conncalc_jsins_v1_0_1_WOODWARD_TCP,ndw_wm_edat_v3_0_0_WOODWARD_TCP,modularity_3study_v1_0_0_WOODWARD_TCP,freesurfer_dev_v1_0_0_WOODWARD_TCP,gsbss_v3_1_0_WOODWARD_TCP,mavol-MA1_v1.0.1_WOODWARD_TCP,mavol-MA2_v1.0.1_WOODWARD_TCP

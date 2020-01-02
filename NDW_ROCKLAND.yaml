@@ -47,11 +47,12 @@ yamlprocessors:
     filepath: connprep-ROCKLAND_v2.1.0_processor.yaml
     arguments:
       inputs.xnat.scans.scan_fmri.types: "REST_1400*"
-
+  - name: mavol-TL_v1_0_0_NDW_ROCKLAND
+    filepath: mavol-TL_v1.0.0_processor.yaml
 
 projects:
 
 # NDW_ROCKLAND
   - project: NDW_ROCKLAND
-    yamlprocessors: slant_v1_0_0_NDW_ROCKLAND,freesurfer_dev_v2_0_0_NDW_ROCKLAND,cat12_ndw_v1_2_1_NDW_ROCKLAND,cat12_ndw_v2_0_0_NDW_ROCKLAND,FMRIQA_v4_2_0_PNC_V3,connprep_rockland_v2_1_0_NDW_ROCKLAND
+    yamlprocessors: slant_v1_0_0_NDW_ROCKLAND,freesurfer_dev_v2_0_0_NDW_ROCKLAND,cat12_ndw_v1_2_1_NDW_ROCKLAND,cat12_ndw_v2_0_0_NDW_ROCKLAND,FMRIQA_v4_2_0_PNC_V3,connprep_rockland_v2_1_0_NDW_ROCKLAND,mavol-TL_v1_0_0_NDW_ROCKLAND
 

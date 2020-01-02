@@ -1,0 +1,26 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 1000
+  job_email: brian.d.boyd@vumc.org 
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+modules:
+  - name: rc
+    filepath: Module_baxter_redcap_sync.py
+    arguments:
+      proctypes: Multi_Atlas_v2_Fix_v1
+      resources: STATS
+yamlprocessors:
+  - name: naleg_roi_v1_0_0_IKIZLER
+    filepath: naleg-roi_v1.0.0_processor.yaml
+
+projects:
+  - project: IKIZLER 
+    modules: rc
+    yamlprocessors: naleg_roi_v1_0_0_IKIZLER
+

@@ -3,7 +3,7 @@ processorlib: /data/mcr/centos7/dax_processors
 modulelib: /data/mcr/centos7/dax_modules
 singularity_imagedir: /data/mcr/centos7/singularity
 attrs:
-  queue_limit: 400
+  queue_limit: 1000
   job_email: shunxing.bao@vanderbilt.edu
   job_email_options: FAIL
   xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
@@ -28,6 +28,10 @@ yamlprocessors:
     arguments:
       inputs.xnat.scans.scan_t1.types: T1W_3D_TFE
       inputs.xnat.assessors.prototypes: MaCRUISE_v3 
+  - name: mavol-TL_v1_0_0_LANDMAN_UPGRAD
+    filepath: mavol-TL_v1.0.0_processor.yaml
+
+
 
 projects:
 # LANDMAN_UPGRAD
@@ -35,7 +39,7 @@ projects:
 #    yamlprocessors: multi_atlas_v2_1_0_LANDMAN_UPGRAD
 #    yamlprocessors: surf_quant_stat_v1_1_0_LANDMAN_UPGRAD
 #    yamlprocessors: macruise_multiatlas_v3_2_0_LANDMAN_UPGRAD
-    yamlprocessors: surf_postproc_cruise_v1_1_0_LANDMAN_UPGRAD
+    yamlprocessors: surf_postproc_cruise_v1_1_0_LANDMAN_UPGRAD,mavol-TL_v1_0_0_LANDMAN_UPGRAD
 #    yamlprocessors: surf_quant_v1_1_0_LANDMAN_UPGRAD,curve_extract_v1_1_0_CASCIO_CM
 #    yamlprocessors: FS6_v1_2_0_LANDMAN_UPGRAD,multi_atlas_v2_1_0_CASCIO_CM,macruise_multiatlas_v3_2_0_CASCIO_CM,surf_postproc_cruise_v1_1_0_CASCIO_CM,surf_quant_v1_1_0_CASCIO_CM,curve_extract_v1_1_0_CASCIO_CM,surf_quant_stat_v1_1_0_CASCIO_CM
 #    yamlprocessors: FS6_v1_2_0_LANDMAN_UPGRAD,multi_atlas_v2_1_0_CASCIO_CM,surf_postproc_fs_v1_1_0_CASCIO_CM,surf_quant_v1_1_0_CASCIO_CM,curve_extract_v1_1_0_CASCIO_CM,surf_quant_stat_v1_1_0_CASCIO_CM
