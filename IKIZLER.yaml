@@ -15,12 +15,19 @@ modules:
     arguments:
       proctypes: Multi_Atlas_v2_Fix_v1
       resources: STATS
+
+  - name: rs
+    filepath: Module_redcap_sync_yaml.py
+    arguments:
+      proctypes: naleg-roi_v1
+      resources: STATS
+
 yamlprocessors:
   - name: naleg_roi_v1_0_0_IKIZLER
     filepath: naleg-roi_v1.0.0_processor.yaml
 
 projects:
   - project: IKIZLER 
-    modules: rc
+    modules: rc,rs
     yamlprocessors: naleg_roi_v1_0_0_IKIZLER
 
