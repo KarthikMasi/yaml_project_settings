@@ -37,8 +37,27 @@ yamlprocessors:
     arguments:
       inputs.xnat.scans.scan_t1.types: T1
 
+  - name: surf_quant_v1_1_0_hfd_cam
+    filepath: surf_quant_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1W_3D_TFE,T1W_3D_TFE_SENSE 
+      attrs.walltime: "120:00:00"
+      attrs.memory: 80000
+
+  - name: curve_extract_v1_1_0_hfd_cam
+    filepath: curve_extract_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1W_3D_TFE,T1W_3D_TFE_SENSE 
+      attrs.walltime: "4:00:00"
+      attrs.memory: 16000
+
+  - name: surf_quant_stat_v1_1_0_hfd_cam
+    filepath: surf_quant_stat_v1.1.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: T1W_3D_TFE,T1W_3D_TFE_SENSE 
+
 projects:
 # hfd_cam
   - project: hfd_cam
-    yamlprocessors: FS6_v1_2_3_hfd_cam,slant_v1_0_0_hfd_cam,macruise_v3_2_0_hfd_cam,surf_postproc_macruise_v1_2_0_hfd_cam
+    yamlprocessors: FS6_v1_2_3_hfd_cam,slant_v1_0_0_hfd_cam,macruise_v3_2_0_hfd_cam,surf_postproc_macruise_v1_2_0_hfd_cam,surf_quant_v1_1_0_hfd_cam,curve_extract_v1_1_0_hfd_cam,surf_quant_stat_v1_1_0_hfd_cam
    
