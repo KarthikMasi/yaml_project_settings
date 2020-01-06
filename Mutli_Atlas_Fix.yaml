@@ -1,0 +1,431 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 1000
+  job_email: karthik.ramadass@vamderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+  - name: mavol-MA1_v1.0.1_FIX
+    filepath: mavol-MA1_v1.0.1_processor.yaml
+  - name: mavol-MA2_v1.0.1_FIX
+    filepath: mavol-MA2_v1.0.1_processor.yaml
+
+projects:
+  - project: AADLDL4
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: ABIDE
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: ACOBA
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: ADNIRFTC
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: ADNI_BC
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: ADNI_EC
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: ADNI_STD_3T
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: ALBERT
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: AMYGDALA
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: ANDERSON
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: AP_Test
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: ATOMOX
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: AT_Cerebellum
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: AVISON_IDIOM
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: Amygdala_Valid
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: BAND
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: BC_colin27
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: BLACKFORD
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: BLAIR
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: BLSA
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: BlackfordAmyg
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: CALSER
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: CASCIO
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: CASCIO_BCSP
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: CASCIO_CM
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: CASCIO_SPSI
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: CHANGES
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: CONTE
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: CUTTING
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: ClaassenContr
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: Claassen_Crave
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: Claassen_HCP
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: Claassen_Hippo
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: Claassen_ICD
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: Claassen_PAF
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: Claassen_PET
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: CuttingPed
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: DARBY
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: DAWANT
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: DBS_3T_7T
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: DBS_Subcort
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: DWMRI_TEST
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: Dawant_DBS_FS
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: DyslexiaYorkU
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: EVE_Atlas
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: GNB
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: GNB_V
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: HCP_Test
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: HECKERS
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: HIPPO
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: Heckers7Ttest
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: HeckersAnxiety
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: HeckersFEPH3T
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: HeckersPGPP
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: Heckers_OT
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: IACL
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: IXI
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: JEFFERSON
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: KALEN
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: KUJAWA
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: Kirby21
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: Konrad
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: LANDMAN
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: LANDMAN_C
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: LANDMAN_DWMRI
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: LANDMAN_DWMRI.toolong
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: LANDMAN_UPGRAD
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: LERDP1_testing
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: LYU_ASD
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: Label_Peds
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: Lebel_Peds
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: LesionPilot
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: MBSR-2010
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: MBSR-2018
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: MMR_3T_7T
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: MONROE
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: MORGAN
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: MORGAN_TEST
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: MR-CT
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: MSSeg2016
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: MSTest
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: NCODE
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: NDAR
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: NDW_ROCKLAND
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: NEWHOUSE
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: NEWTON
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: NIC
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: NIC_phantom
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: NORMAL
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: NewhouseBC
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: NewhouseCC
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: NewhouseMDDHx
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: NewhouseMM
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: OASIS
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: OpenfMRI
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: PNCE
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: POLYN
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: PREDICTHD
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: PRICE
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: PRICE_NSF
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: PROCESSTBI
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: R21Perfusion
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: REX
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: REX_TBI_VUMC
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: ROGERS
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: SCD_Mec
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: SMITH
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: SMITH_DOD
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: SzConnectHPC
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: T1_Fallacy
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: T1sold
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: TAYLOR
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: TAYLOR_BIAC23
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: TAYLOR_CAARE
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: TAYLOR_DepMIND
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: TAYLOR_HARP135
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: TAYLOR_HHPC
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: TNAD
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: TRAVELING_SUBJ
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: VAD2
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: VUSTP
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: VU_ADNI
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: WALLACE
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: WOODWARD
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: WOODWARD_SING4
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: WoodwardPGPP
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: XNATest
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: XNATest2
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: ZALD
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: ZALD_DND
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: ZALD_SV
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: ZALD_TTS_PILOT
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: adhd_200
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: drbakshi_ms
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: fcon_1000
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: mmtest
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: mmupgrade
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
+
+  - project: nki_rockland
+    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
