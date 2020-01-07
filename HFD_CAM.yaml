@@ -21,6 +21,7 @@ yamlprocessors:
     filepath: surf_postproc_fs_v1.2.1_processor.yaml
     arguments:
       inputs.xnat.scans.scan_t1.types: T1
+      attrs.walltime: "32:00:00"
 
   - name: slant_v1_0_0_hfd_cam
     filepath: slant_v1.0.0_processor.yaml
