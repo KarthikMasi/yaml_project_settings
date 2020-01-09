@@ -42,10 +42,6 @@ yamlprocessors:
       inputs.xnat.assessors.assr_ma.proctypes: slant_v1
   - name: CONNPREP_v2_1_0_PNC_V3
     filepath: connprep_v2.1.0_processor.yaml
-  - name: fsthalconn_v2_0_3_PNC_V3
-    filepath: fsthalconn_v2.0.3_processor.yaml
-  - name: fsthalconnMNI_PNC_V3
-    filepath: fsthalconnMNI_v1.0.0_processor.yaml 
   - name: ydtiQA_multi-PNC_v6_0_0_PNC_V3
     filepath: ydtiQA-multi-PNC_v6.0.0_processor.yaml
 
@@ -53,7 +49,7 @@ projects:
 
 # PNC_V3
   - project: PNC_V3
-    yamlprocessors: fsthalconn_v2_0_3_PNC_V3,freesurfer_dev_v2_0_0_PNC_V3,FMRIQA_v4_2_0_PNC_V3,CONNPREP_v2_1_0_PNC_V3,fsthalconnMNI_PNC_V3,ydtiQA_multi-PNC_v6_0_0_PNC_V3
+    yamlprocessors: freesurfer_dev_v2_0_0_PNC_V3,FMRIQA_v4_2_0_PNC_V3,CONNPREP_v2_1_0_PNC_V3,ydtiQA_multi-PNC_v6_0_0_PNC_V3
 #    yamlprocessors: slant_v1_0_0_PNC_V3
 #    yamlprocessors: surf_postproc_v1_1_0_PNC_V3
 #    yamlprocessors: surf_quant_v1_1_0_PNC_V3,cat12_ndw_v1_2_1_PNC_V3
