@@ -21,8 +21,10 @@ yamlprocessors:
     filepath: curve_extract_v1.1.0_processor.yaml
   - name: surf_quant_stat_v1_1_0_REX_TBI_VUMC
     filepath: surf_quant_stat_v1.1.0_processor.yaml
+  - name: macruise_v3_2_0_REX_TBI_VUMC
+    filepath: macruise_v3.2.0_processor.yaml
 
 projects:
 # REX_TBI_VUMC
   - project: REX_TBI_VUMC
-    yamlprocessors: surf_postproc_v1_1_0_REX_TBI_VUMC,surf_quant_v1_1_0_REX_TBI_VUMC,curve_extract_v1_1_0_REX_TBI_VUMC,surf_quant_stat_v1_1_0_REX_TBI_VUMC
+    yamlprocessors: surf_postproc_v1_1_0_REX_TBI_VUMC,surf_quant_v1_1_0_REX_TBI_VUMC,curve_extract_v1_1_0_REX_TBI_VUMC,surf_quant_stat_v1_1_0_REX_TBI_VUMC,macruise_v3_2_0_REX_TBI_VUMC
