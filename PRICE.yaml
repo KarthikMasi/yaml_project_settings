@@ -41,4 +41,6 @@ projects:
   - project: PRICE_NFA
     modules: d2n
     yamlprocessors: tracula,fs6,dtiqa,ma,bedpost
-
+# PRICE_DDK2
+  - project: PRICE_DDK2
+    yamlprocessors: fs6
