@@ -32,6 +32,8 @@ yamlprocessors:
     filepath: TRACULA_v2.0.0_processor.yaml
   - name: fmriqa
     filepath: FMRIQA_v4.0.0_processor.yaml
+  - name: FS6_V1_2_3_PRICE_DDK2
+    filepath: FS6_v1.2.3_processor.yaml
 
 projects:
 # PRICE_NSF
@@ -43,4 +45,4 @@ projects:
     yamlprocessors: tracula,fs6,dtiqa,ma,bedpost
 # PRICE_DDK2
   - project: PRICE_DDK2
-    yamlprocessors: fs6
+    yamlprocessors: FS6_V1_2_3_PRICE_DDK2
