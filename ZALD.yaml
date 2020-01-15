@@ -30,7 +30,8 @@ yamlprocessors:
       inputs.xnat.scans.scan_dti.types: dti
   - name: mavol-TL_v1_0_0_ZALD_TTS
     filepath: mavol-TL_v1.0.0_processor.yaml
-
+    arguments:
+      attrs.walltime: "2:00:00"
 #ZALD_DND
   - name: mavol-TL_v1_0_0_ZALD_DND
     filepath: mavol-TL_v1.0.0_processor.yaml
