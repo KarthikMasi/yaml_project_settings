@@ -15,8 +15,12 @@ yamlprocessors:
     filepath: freesurfer_dev_v1.0.0.yaml
     arguments:
       inputs.xnat.scans.scan_t1.types: T1W/3D/TFE
+  - name: cat12_ss2p0_v2_0_0_TNAD
+    filepath: cat12_ss2p0_v2.0.0.yaml
+    arguments:
+      inputs.xnat.scans.t1scan.types: T1W/3D/TFE
 
 projects:
 # TNAD
   - project: TNAD
-    yamlprocessors: freesurfer_dev_v1_0_0_TNAD
+    yamlprocessors: freesurfer_dev_v1_0_0_TNAD,cat12_ss2p0_v2_0_0_TNAD
