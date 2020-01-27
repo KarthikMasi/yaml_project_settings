@@ -6,7 +6,7 @@ attrs:
   queue_limit: 200
   job_email: camilo.bermudez@vanderbilt.edu
   job_email_options: FAIL
-  xnat_host: http://xnat2.vanderbilt.edu:8080/xnat
+  xnat_host: http://129.59.135.143:8080/xnat
   skip_lastupdate: Y
 
 yamlprocessors:
