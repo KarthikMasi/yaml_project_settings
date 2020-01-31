@@ -211,9 +211,6 @@ projects:
   - project: LANDMAN_DWMRI
     yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
 
-  - project: LANDMAN_DWMRI.toolong
-    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
-
   - project: LANDMAN_UPGRAD
     yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
 
@@ -221,9 +218,6 @@ projects:
     yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
 
   - project: LYU_ASD
-    yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
-
-  - project: Label_Peds
     yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
 
   - project: Lebel_Peds
