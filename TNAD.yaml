@@ -20,7 +20,7 @@ yamlprocessors:
     arguments:
       inputs.xnat.scans.t1scan.types: T1W/3D/TFE
   - name: connprep_v2_1_0_TNAD
-    filepath: connprep_v2.1.0.yaml
+    filepath: connprep_v2.1.0_processor.yaml
     arguments:
       inputs.xnat.scans.t1scan.types: "T1W/3D/TFE"
       inputs.xnat.scans.scan_fmri.types: "Resting State"
