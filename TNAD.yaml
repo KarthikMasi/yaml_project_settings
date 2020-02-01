@@ -25,7 +25,7 @@ yamlprocessors:
       inputs.xnat.scans.t1scan.types: "T1W/3D/TFE"
       inputs.xnat.scans.scan_fmri.types: "Resting State"
       inputs.xnat.assessors.assr_cat12.proctypes: cat12_ss2p0_v2
-      inputs.xnat.assessors.assr_cat12.need_qc: True
+      inputs.xnat.assessors.assr_cat12.needs_qc: True
 
 projects:
 # TNAD
