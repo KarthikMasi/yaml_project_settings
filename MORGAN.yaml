@@ -44,8 +44,12 @@ yamlprocessors:
     filepath: surf_quant_stat_v1.1.0_processor.yaml
     arguments:
       inputs.xnat.scans.scan_t1.types: AnatBrain_T1W3D,AnatBrain_T1W3D_CS3
+  - name: nobis_tracts_v1_0_0_MORGAN
+    filepath: nobis_tracts_v1.0.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_t1.types: "AnatBrain_T1W3D*"
 
 projects:
   - project: MORGAN
-    yamlprocessors: freesurfer_dev_v2_0_0_MORGAN,dtiQA_v6_0_0_MORGAN,surf_postproc_fs_dev_v1_2_0_MORGAN,surf_quant_v1_1_0_MORGAN,curve_extract_v1_1_0_MORGAN,surf_quant_stat_v1_1_0_MORGAN
+    yamlprocessors: freesurfer_dev_v2_0_0_MORGAN,dtiQA_v6_0_0_MORGAN,surf_postproc_fs_dev_v1_2_0_MORGAN,surf_quant_v1_1_0_MORGAN,curve_extract_v1_1_0_MORGAN,surf_quant_stat_v1_1_0_MORGAN,nobis_tracts_v1_0_0_MORGAN
     modules: dcm2niix_MORGAN

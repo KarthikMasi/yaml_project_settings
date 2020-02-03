@@ -45,4 +45,5 @@ projects:
     yamlprocessors: tracula,fs6,dtiqa,ma,bedpost
 # PRICE_DDK2
   - project: PRICE_DDK2
+    modules: d2n
     yamlprocessors: FS6_V1_2_3_PRICE_DDK2
