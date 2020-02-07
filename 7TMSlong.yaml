@@ -1,0 +1,30 @@
+---
+processorlib: /data/mcr/centos7/dax_processors
+modulelib: /data/mcr/centos7/dax_modules
+singularity_imagedir: /data/mcr/centos7/singularity
+attrs:
+  queue_limit: 400
+  job_email: justin.blaber@vanderbilt.edu
+  job_email_options: FAIL
+  xnat_host: http://129.59.135.143:8080/xnat
+  skip_lastupdate: Y
+
+yamlprocessors:
+# MP2RAGE
+  - name: mp2rage_v2_0_0_7TMSlong
+    filepath: mp2rage_v2.0.0_processor.yaml
+    arguments:
+      inputs.xnat.scans.scan_mp2rage.types: '*MP2RAGE*'
+
+modules:
+# PSYXSEC
+  - name: dcm2niix_MP2RAGE_7TMSlong
+    filepath: Module_dcm2niix.py
+    arguments:
+      dcm2niixpath: /data/mcr/centos7/dcm2niix/16_JULY_2019/console/dcm2niix
+
+projects:
+# 7TMSlong
+  - project: 7TMSlong
+    yamlprocessors: mp2rage_v2_0_0_7TMSlong
+    modules: dcm2niix_MP2RAGE_7TMSlong
