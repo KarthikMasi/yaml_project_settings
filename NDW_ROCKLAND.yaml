@@ -50,7 +50,8 @@ yamlprocessors:
       inputs.xnat.assessors.assr_cat12.proctypes: "cat12_ndw_v2"
   - name: mavol-TL_v1_0_0_NDW_ROCKLAND
     filepath: mavol-TL_v1.0.0_processor.yaml
-
+    arguments:
+      attrs.walltime: "2:00:00"
 projects:
 
 # NDW_ROCKLAND

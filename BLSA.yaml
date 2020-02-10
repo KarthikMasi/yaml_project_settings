@@ -40,7 +40,8 @@ yamlprocessors:
       inputs.xnat.scans.scan_t1.types: T1,MPRAGE
   - name: mavol-TL_v1_0_0_BLSA
     filepath: mavol-TL_v1.0.0_processor.yaml
-
+    arguments:
+      attrs.walltime: "2:00:00"
 
 projects:
 # BLSA
