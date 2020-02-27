@@ -62,7 +62,7 @@ projects:
     yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
 
   - project: TRAVELING_SUBJ
-    yamlprocessors:mavol-MA2_v1.0.1_FIX
+    yamlprocessors: mavol-MA2_v1.0.1_FIX
 
   - project: VAD2
     yamlprocessors: mavol-MA1_v1.0.1_FIX,mavol-MA2_v1.0.1_FIX
